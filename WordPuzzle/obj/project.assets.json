@@ -1519,6 +1519,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "WordPuzzleData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4"
+        },
+        "compile": {
+          "bin/placeholder/WordPuzzleData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordPuzzleData.dll": {}
+        }
       }
     }
   },
@@ -5787,13 +5801,19 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "WordPuzzleData/1.0.0": {
+      "type": "project",
+      "path": "../WordPuzzleData/WordPuzzleData.csproj",
+      "msbuildProject": "../WordPuzzleData/WordPuzzleData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.EntityFrameworkCore >= 5.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.4"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.4",
+      "WordPuzzleData >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5827,7 +5847,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzleData\\WordPuzzleData.csproj": {
+              "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzleData\\WordPuzzleData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

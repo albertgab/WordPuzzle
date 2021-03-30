@@ -63,3 +63,9 @@ D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\obj\Debug\
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\obj\Debug\net5.0\ref\WordPuzzle.dll
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\obj\Debug\net5.0\WordPuzzle.pdb
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\obj\Debug\net5.0\WordPuzzle.genruntimeconfig.cache
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.deps.json
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.runtimeconfig.json
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.runtimeconfig.dev.json
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.exe
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.dll
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzle\bin\Debug\net5.0\WordPuzzleData.pdb
