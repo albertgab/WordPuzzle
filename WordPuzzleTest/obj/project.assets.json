@@ -2058,7 +2058,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "WordPuzzle/1.0.0": {
+      "WordPuzzleBusiness/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -2067,10 +2067,10 @@
           "WordPuzzleData": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/WordPuzzle.dll": {}
+          "bin/placeholder/WordPuzzleBusiness.dll": {}
         },
         "runtime": {
-          "bin/placeholder/WordPuzzle.dll": {}
+          "bin/placeholder/WordPuzzleBusiness.dll": {}
         }
       },
       "WordPuzzleData/1.0.0": {
@@ -7506,10 +7506,10 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "WordPuzzle/1.0.0": {
+    "WordPuzzleBusiness/1.0.0": {
       "type": "project",
-      "path": "../WordPuzzle/WordPuzzle.csproj",
-      "msbuildProject": "../WordPuzzle/WordPuzzle.csproj"
+      "path": "../WordPuzzle/WordPuzzleBusiness.csproj",
+      "msbuildProject": "../WordPuzzle/WordPuzzleBusiness.csproj"
     },
     "WordPuzzleData/1.0.0": {
       "type": "project",
@@ -7525,7 +7525,7 @@
       "Microsoft.NET.Test.Sdk >= 16.9.1",
       "NUnit >= 3.13.1",
       "NUnit3TestAdapter >= 3.17.0",
-      "WordPuzzle >= 1.0.0"
+      "WordPuzzleBusiness >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7560,8 +7560,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj": {
-              "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj"
+            "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj": {
+              "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj"
             }
           }
         }

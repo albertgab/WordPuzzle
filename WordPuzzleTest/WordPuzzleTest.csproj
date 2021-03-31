@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WordPuzzle\WordPuzzle.csproj" />
+    <ProjectReference Include="..\WordPuzzle\WordPuzzleBusiness.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace WordPuzzle
+namespace WordPuzzleBusiness
 {
     public partial class History
     {

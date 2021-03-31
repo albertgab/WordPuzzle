@@ -106,8 +106,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj": {
-                "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj"
+              "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj": {
+                "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj"
               }
             }
           }
@@ -168,12 +168,12 @@
         }
       }
     },
-    "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj": {
+    "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj",
-        "projectName": "WordPuzzle",
-        "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzle.csproj",
+        "projectUniqueName": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj",
+        "projectName": "WordPuzzleBusiness",
+        "projectPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\WordPuzzleBusiness.csproj",
         "packagesPath": "C:\\Users\\Albi\\.nuget\\packages\\",
         "outputPath": "D:\\OneDrive - Sparta Global Limited\\Projects\\C#\\WordPuzzle\\WordPuzzle\\obj\\",
         "projectStyle": "PackageReference",

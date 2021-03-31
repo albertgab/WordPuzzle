@@ -11,7 +11,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.4",
-          "WordPuzzle": "1.0.0"
+          "WordPuzzleBusiness": "1.0.0"
         },
         "runtime": {
           "WordPuzzleWPF.dll": {}
@@ -993,14 +993,14 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "WordPuzzle/1.0.0": {
+      "WordPuzzleBusiness/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4",
           "WordPuzzleData": "1.0.0"
         },
         "runtime": {
-          "WordPuzzle.dll": {}
+          "WordPuzzleBusiness.dll": {}
         }
       },
       "WordPuzzleData/1.0.0": {
@@ -1699,7 +1699,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "WordPuzzle/1.0.0": {
+    "WordPuzzleBusiness/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
