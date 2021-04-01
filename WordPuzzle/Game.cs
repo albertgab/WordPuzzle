@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WordPuzzleData;
 
 namespace WordPuzzleBusiness
 {
@@ -29,7 +30,16 @@ namespace WordPuzzleBusiness
                 return "Wrong password!";
             }
         }
-        
+        public List<Level> LoadLevelsList()
+        {
+            
+            using (var db = new WordPuzzleContext())
+            {
+                var list = db.Levels.ToList();
+                return list;
+            }
+            
+        }
         public bool LoadLevel(int levelId)
         {
             using (var db = new WordPuzzleContext())

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace WordPuzzleBusiness
+namespace WordPuzzleData
 {
     public partial class WordPuzzleContext : DbContext
     {

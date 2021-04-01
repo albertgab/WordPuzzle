@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace WordPuzzleBusiness
-{
+namespace WordPuzzleData
+{ 
     public partial class Level
     {
         public Level()

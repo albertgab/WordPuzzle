@@ -20,44 +20,65 @@ namespace WordPuzzleWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        public event EventHandler UserControlClicked;
         Game game = new Game();
+        StackPanel stk;
+
+        public event Action<string> onUserCodeFetched;
         public MainWindow()
         {
             InitializeComponent();
-
-            var user = new User();
-            using (var db = new WordPuzzleContext())
-            {
-                user = db.Users.Where((u) => u.Username == "Spartacus").FirstOrDefault();
-            }
+            //frameMain.Content = new Login();
+            listOfLevels.ItemsSource = game.LoadLevelsList();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
         {
-            var message = game.Login(textBoxUsername.Text, textBoxPassword.Text);
+            var message = game.Login(textBoxUsername.Text, passwordBox.Password);
             if (message == "")
             {
                 textBlock.Text = "Successfully logged in to your WordPuzzle account!";
-
-
-
+                //LoginUC loginUC = new LoginUC();
+                //frameMain.Content = loginUC;
+                //stk.Children.Add(loginUC);
+                //loginUC.textBox.Text = "sad";
+                //loginUC.UserControlClicked;
+                lvl.Visibility = Visibility.Visible;
             }
             else
             {
                 textBlock.Text = message;
                 textBoxUsername.Text = "";
-                textBoxPassword.Text = "";
+                passwordBox.Password = "";
             }
             //textBlock.Text = game.User.Username + game.User.Password;
             //var win2 = new Window1();
             //win2.Show();
         }
 
-        private void textBoxUsername_TextChanged(object sender, TextChangedEventArgs e)
+        private void textBoxPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
+        }
+
+        private void listOfLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var size = 400;
+            var x = 10;
+            var y = 10;
+            //StackPanel stk;
+            for (int i = 0; i < y; i++)
+            {
+                stk = new StackPanel() { Name = $"row_{i}", Orientation = Orientation.Horizontal, Height = size / y };
+                this.stackLvl.Children.Add(stk);
+                for (int j = 0; j < x; j++)
+                {
+                    this.stk.Children.Add(new Button() { Name = $"b{i}x{j}", Width = size / x, Height = size / y });
+                }
+            }
         }
     }
 }
