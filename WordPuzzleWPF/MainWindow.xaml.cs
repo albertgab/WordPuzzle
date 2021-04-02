@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WordPuzzleBusiness;
 using WordPuzzleData;
+//using System.Windows.Forms;
 
 namespace WordPuzzleWPF
 {
@@ -40,7 +43,10 @@ namespace WordPuzzleWPF
             var message = game.Login(textBoxUsername.Text, passwordBox.Password);
             if (message == "")
             {
+                textBlock.Foreground = Brushes.Green;
                 textBlock.Text = "Successfully logged in to your WordPuzzle account!";
+                //Forms.Application.DoEvents();
+                //Thread.Sleep(3000);
                 //LoginUC loginUC = new LoginUC();
                 //frameMain.Content = loginUC;
                 //stk.Children.Add(loginUC);
@@ -50,6 +56,7 @@ namespace WordPuzzleWPF
             }
             else
             {
+                textBlock.Foreground = Brushes.Red;
                 textBlock.Text = message;
                 textBoxUsername.Text = "";
                 passwordBox.Password = "";
@@ -70,15 +77,20 @@ namespace WordPuzzleWPF
             var x = 10;
             var y = 10;
             //StackPanel stk;
+            Debug.WriteLine("debug " + listOfLevels.SelectedItem.ToString()[0]);
+            if (!game.LoadLevel(listOfLevels.SelectedItem.ToString()[0]-'0')) { MessageBox.Show("Problem with loading the level!"); return; }
+            //stackLvl.ClearValue(ContentControl.ContentProperty);
+            stackLvl.Children.Clear();
             for (int i = 0; i < y; i++)
             {
                 stk = new StackPanel() { Name = $"row_{i}", Orientation = Orientation.Horizontal, Height = size / y };
                 this.stackLvl.Children.Add(stk);
                 for (int j = 0; j < x; j++)
                 {
-                    this.stk.Children.Add(new Button() { Name = $"b{i}x{j}", Width = size / x, Height = size / y });
+                    this.stk.Children.Add(new Button() { Name = $"b{i}x{j}", Content = game.Level.Letters[i*x+j], Width = size / x, Height = size / y });
                 }
             }
         }
+     
     }
 }

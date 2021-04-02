@@ -15,6 +15,7 @@ namespace WordPuzzleBusiness
         Level _level;
 
         public User User { get => _user; set => _user = value; }
+        public Level Level { get => _level; set => _level = value; }
 
         public string Login(string username, string password)
         {
@@ -44,9 +45,9 @@ namespace WordPuzzleBusiness
         {
             using (var db = new WordPuzzleContext())
             {
-                _level = db.Levels.Where((l) => l.LevelId == levelId).FirstOrDefault();
+                Level = db.Levels.Where((l) => l.LevelId == levelId).FirstOrDefault();
             }
-            return true;
+            return !(Level is null);
         }
 
     }
