@@ -14,7 +14,7 @@
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="270,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="18" Width="56" TextAlignment="Right"><Run Text="Username"/><Run Text=":" FlowDirection="RightToLeft"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="270,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="56" TextAlignment="Right"><Run Text="Password:"/></TextBlock>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,131,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="278" TextAlignment="Center"/>
-        <Grid Name="lvl" Visibility="Hidden" Margin="10,10,0,0">
+        <Grid Name="lvl" Visibility="Visible" Margin="10,10,0,0">
             <Rectangle Fill="White" />
             <ListBox x:Name="listOfLevels" SelectionChanged="listOfLevels_SelectionChanged" Margin="10,10,414,10" />
 

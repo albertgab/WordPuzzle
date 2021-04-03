@@ -45,7 +45,8 @@ namespace WordPuzzleBusiness
         {
             using (var db = new WordPuzzleContext())
             {
-                Level = db.Levels.Where((l) => l.LevelId == levelId).FirstOrDefault();
+                Level = db.Levels.Where(l => l.LevelId == levelId).FirstOrDefault();
+                Level.Solutions = db.Solutions.Where(s => s.LevelId == levelId).ToList();
             }
             return !(Level is null);
         }

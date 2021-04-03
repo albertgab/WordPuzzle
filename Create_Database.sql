@@ -44,4 +44,3 @@ ALTER TABLE Solutions
 ADD CONSTRAINT FK_Solutions_Levels
 FOREIGN KEY (LevelID) REFERENCES Levels(LevelID);
 
-SELECT * FROM Levels
