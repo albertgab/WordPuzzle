@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPuzzleData", "WordPuzzl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPuzzleTest", "WordPuzzleTest\WordPuzzleTest.csproj", "{A7E93655-BFAC-4864-9C19-35ADF5B5899C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPuzzleWPF", "WordPuzzleWPF\WordPuzzleWPF.csproj", "{3511A8E9-6984-4576-97B4-7FA5E60C07E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPuzzleWPF", "WordPuzzleWPF\WordPuzzleWPF.csproj", "{3511A8E9-6984-4576-97B4-7FA5E60C07E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,6 +20,61 @@ namespace WordPuzzleWPF
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
+    public partial class Login : Window
+    {
+        public Game game = new Game();
+        //MainWindow win;
+        
+        public Login()
+        {
+            InitializeComponent();
+            //win = new MainWindow();
+
+
+        }
+        public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
+        {
+            var message = game.Login(textBoxUsername.Text, passwordBox.Password);
+            if (message == "")
+            {
+                textBlock.Foreground = Brushes.Green;
+                textBlock.Text = "Successfully logged in to your WordPuzzle account!";
+                //Forms.Application.DoEvents();
+                //LoginUC loginUC = new LoginUC();
+                //frameMain.Content = loginUC;
+                //stk.Children.Add(loginUC);
+                //loginUC.textBox.Text = "sad";
+                //loginUC.UserControlClicked;
+                MainWindow main = new MainWindow();
+                main.Show();
+                textBoxUsername.Text = "";
+                passwordBox.Password = "";
+            }
+            else
+            {
+                textBlock.Foreground = Brushes.Red;
+                textBlock.Text = message;
+                textBoxUsername.Text = "";
+                passwordBox.Password = "";
+            }
+        }
+
+        private void buttonSignIn_Clicked(object sender, RoutedEventArgs e)
+        {
+            SignIn sign = new SignIn();
+            sign.Show();
+        }
+    }
+}
+
+
+
+/*
+namespace WordPuzzleWPF
+{
+    /// <summary>
+    /// Interaction logic for Login.xaml
+    /// </summary>
     public partial class Login : Page
     {
         Game game = new Game();
@@ -63,3 +118,4 @@ namespace WordPuzzleWPF
             }
         }
 }
+*/

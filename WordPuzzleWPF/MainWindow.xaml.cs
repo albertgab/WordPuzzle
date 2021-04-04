@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using WordPuzzleBusiness;
 using WordPuzzleData;
 //using System.Windows.Forms;
+//using Application = System.Windows.Application;
 
 namespace WordPuzzleWPF
 {
@@ -28,11 +29,14 @@ namespace WordPuzzleWPF
     public partial class MainWindow : Window
     {
         //public event EventHandler UserControlClicked;
-        Game game = new Game();
+        //Game game = new Game();
+
+        //((Login) Application.Current.Login)
+        //((MainWindow) System.Windows.Application.Current.MainWindow).;
+        Game game = ((Login)Application.Current.MainWindow).game;
         Brush prevClr;
+        MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
         List<StackPanel> stk = new List<StackPanel>();
-        //List<List<Button>> puzzle = new List<List<Button>>();
-        //List<Button> puzzleRow = new List<Button>();
         int btnClkd_x = -1;
         int btnClkd_y = -1;
         DateTime startTime;
@@ -43,32 +47,28 @@ namespace WordPuzzleWPF
         public MainWindow()
         {
             InitializeComponent();
-            
             //frameMain.Content = new Login();
             listOfLevels.ItemsSource = game.LoadLevelsList();
-            var b1 = new Button { Content = "b1" };
-            b1.Click += ClickOnLetter;
 
 
-            //textBlockTime.Text = $"Time: {(int)time.TotalMinutes}:{time.Seconds}:{time.Milliseconds / 100}";
+            //var b1 = new Button { Content = "b1" };
+            //b1.Click += ClickOnLetter;
+            //
 
-
-
-            
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
-            //AppDomain.CurrentDomain.ProcessExit += new EventHandler((sender, e) => OnProcessExit(sender, e, timer));
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler((sender, e) => timer.Stop());
+            //Login win = new Login();
+            //win.Show();
         }
+          
         //static void OnProcessExit(object sender, EventArgs e, System.Windows.Threading.DispatcherTimer t) => t.Stop();
         void timer_Tick(object sender, EventArgs e)
         {
-            time = startTime == DateTime.MinValue ? new TimeSpan(0) : DateTime.Now - startTime;
-            textBlockTime.Text = "Time: " + (time.TotalMinutes < 10 ? "0" : "") + (int)time.TotalMinutes
-                + ":" + (time.Seconds < 10 ? "0" : "") + time.Seconds;
+            game.Time = startTime == DateTime.MinValue ? new TimeSpan(0) : DateTime.Now - startTime;
+            textBlockTimer.Text = "Time: " + (game.Time.TotalMinutes < 10 ? "0" : "") + (int)game.Time.TotalMinutes
+                + ":" + (game.Time.Seconds < 10 ? "0" : "") + game.Time.Seconds;
         }
-        public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
+        /*public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
         {
             var message = game.Login(textBoxUsername.Text, passwordBox.Password);
             if (message == "")
@@ -94,10 +94,7 @@ namespace WordPuzzleWPF
             //textBlock.Text = game.User.Username + game.User.Password;
             //var win2 = new Window1();
             //win2.Show();
-        }
-
-        //private void textBoxPassword_TextChanged(object sender, TextChangedEventArgs e) { }
-
+        }*/
         private void listOfLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var size = stackLvl.ActualHeight;
@@ -127,6 +124,7 @@ namespace WordPuzzleWPF
                 
             }
             startTime = DateTime.Now;
+            timer.Start();
             //Debug.WriteLine(stk[5].Children[4]);
             //Debug.WriteLine();
             // Debug.WriteLine(s);
@@ -186,14 +184,16 @@ namespace WordPuzzleWPF
 
 
 
-                        if(true)
+                        if(true)//////////////////////////////////////////////////////////////////////////////////////////REMOVE
                         {
-                            var time =  DateTime.Now - startTime;
-                            Debug.WriteLine($"WIN!!! Time: {(int)time.TotalMinutes}:{time.Seconds}:{time.Milliseconds/100}");
-                            
-                            //var t = time.Pa
+                            game.Time =  DateTime.Now - startTime;
+                            timer.Stop();
+                            Debug.WriteLine($"WIN!!! Time: {(int)game.Time.TotalMinutes}:{game.Time.Seconds}:{game.Time.Milliseconds/100}");
 
-                            game.Score += (int)((1 - time.TotalMilliseconds / (stk.Count * 60000)) * 500); //time bonus 
+                            //var t = game.Time.Pa
+
+                            game.Score += (int)((1 - game.Time.TotalMilliseconds / (stk.Count * 60000)) * 500); //time bonus
+                            game.GameFinished(game.Time);
                             Debug.WriteLine(game.Score);
                         }
                     }
@@ -216,6 +216,5 @@ namespace WordPuzzleWPF
 
 
         }
-     
     }
 }

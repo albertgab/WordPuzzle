@@ -12,6 +12,7 @@ namespace WordPuzzleBusiness
         public User User { get; set; }
         public Level Level { get; set; }
         public int Score { get; set; } = 0;
+        public TimeSpan Time { get; set; }
 
         public string Login(string username, string password)
         {
@@ -46,6 +47,14 @@ namespace WordPuzzleBusiness
             }
             return !(Level is null);
         }
-
+        public void GameFinished(TimeSpan time)
+        {
+            //if (User.Score is null) User.Score = 0;
+            User.Score += Score;
+            History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time }; //DateTime = DateTime.Now()
+            Score = 0;
+            //using (var db = new WordPuzzleContext()) db.SaveChanges();
+            //new WordPuzzleContext().SaveChanges();
+        }
     }
 }
