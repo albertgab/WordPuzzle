@@ -9,13 +9,9 @@ namespace WordPuzzleBusiness
 {
     public class Game
     {
-        int _mode = 0; //0 - not specified, 1 - member user, 2 - guest, 3 - admin
-        User _user;
-
-        Level _level;
-
-        public User User { get => _user; set => _user = value; }
-        public Level Level { get => _level; set => _level = value; }
+        public User User { get; set; }
+        public Level Level { get; set; }
+        public int Score { get; set; } = 0;
 
         public string Login(string username, string password)
         {
@@ -25,7 +21,7 @@ namespace WordPuzzleBusiness
                 if(userQuery is null) { return $"Couldn't find an account with the username: {username}"; }
                 if (userQuery.Password == password) {
                     User = userQuery;
-                    _mode = 1;
+                    //_mode = 1;
                     return "";
                 }
                 return "Wrong password!";

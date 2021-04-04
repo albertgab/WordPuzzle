@@ -27,6 +27,7 @@
                 <StackPanel Width="400" Height="40" Orientation="Horizontal"/>
                 <StackPanel Width="400" Height="40" Orientation="Horizontal"/>-->
             </StackPanel>
+            <TextBlock x:Name="textBlockTime" HorizontalAlignment="Left" Margin="450,359,0,0" Text="Time: 00:00:00" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
 
             <!--<StackPanel Name ="stk" Orientation="Vertical" Visibility="Visible">
                 <ListBox x:Name="listOfLevels" Height="375" Width="456" SelectionChanged="listOfLevels_SelectionChanged"/>

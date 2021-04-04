@@ -27,25 +27,47 @@ namespace WordPuzzleWPF
     
     public partial class MainWindow : Window
     {
-        public event EventHandler UserControlClicked;
+        //public event EventHandler UserControlClicked;
         Game game = new Game();
         Brush prevClr;
         List<StackPanel> stk = new List<StackPanel>();
-        List<List<Button>> puzzle = new List<List<Button>>();
-        List<Button> puzzleRow = new List<Button>();
+        //List<List<Button>> puzzle = new List<List<Button>>();
+        //List<Button> puzzleRow = new List<Button>();
         int btnClkd_x = -1;
         int btnClkd_y = -1;
+        DateTime startTime;
+        TimeSpan time;
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
-        public event Action<string> onUserCodeFetched;
+        //public event Action<string> onUserCodeFetched;
         public MainWindow()
         {
             InitializeComponent();
+            
             //frameMain.Content = new Login();
             listOfLevels.ItemsSource = game.LoadLevelsList();
             var b1 = new Button { Content = "b1" };
             b1.Click += ClickOnLetter;
-        }
 
+
+            //textBlockTime.Text = $"Time: {(int)time.TotalMinutes}:{time.Seconds}:{time.Milliseconds / 100}";
+
+
+
+            
+            timer.Tick += timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
+            //AppDomain.CurrentDomain.ProcessExit += new EventHandler((sender, e) => OnProcessExit(sender, e, timer));
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler((sender, e) => timer.Stop());
+        }
+        //static void OnProcessExit(object sender, EventArgs e, System.Windows.Threading.DispatcherTimer t) => t.Stop();
+        void timer_Tick(object sender, EventArgs e)
+        {
+            time = startTime == DateTime.MinValue ? new TimeSpan(0) : DateTime.Now - startTime;
+            textBlockTime.Text = "Time: " + (time.TotalMinutes < 10 ? "0" : "") + (int)time.TotalMinutes
+                + ":" + (time.Seconds < 10 ? "0" : "") + time.Seconds;
+        }
         public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
         {
             var message = game.Login(textBoxUsername.Text, passwordBox.Password);
@@ -74,10 +96,7 @@ namespace WordPuzzleWPF
             //win2.Show();
         }
 
-        private void textBoxPassword_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        //private void textBoxPassword_TextChanged(object sender, TextChangedEventArgs e) { }
 
         private void listOfLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -93,7 +112,6 @@ namespace WordPuzzleWPF
             for (int y = 0; y < max_y; y++)
             {
                 stk.Add(new StackPanel() { Name = $"row_{y}", Orientation = Orientation.Horizontal, Height = size / max_y });
-
                 for (int x = 0; x < max_x; x++)
                 {
                     var button = new Button() { Name = $"b{x}x{y}", Content = game.Level.Letters[y * max_x + x],
@@ -108,8 +126,8 @@ namespace WordPuzzleWPF
                 //puzzle.Add(puzzleRow);
                 
             }
-            Debug.WriteLine(stk[5].Children[4]);
-            var s = this.stackLvl.Children[1];
+            startTime = DateTime.Now;
+            //Debug.WriteLine(stk[5].Children[4]);
             //Debug.WriteLine();
             // Debug.WriteLine(s);
         }
@@ -149,18 +167,41 @@ namespace WordPuzzleWPF
                         }
                     }
                     Debug.WriteLine(game.Level.Solutions);
+                    //Word found
                     if (game.Level.Solutions.Any(s => s.Word == word)){
                         game.Level.Solutions.Remove(game.Level.Solutions.Where(s => s.Word == word).FirstOrDefault());
+                        game.Score += 100;
+                        Debug.WriteLine(stk.Count);
                         foreach (var item in btns) item.Background = Brushes.Green;
-                        if(game.Level.Solutions.Count == 0)
-                        {
-                            Debug.WriteLine("WIN!!!");
-                        }
                         Debug.WriteLine($"Found {word}");
+
+
+
+
+
+                        //level finished
+                        //if(game.Level.Solutions.Count == 0)
+
+
+
+
+
+                        if(true)
+                        {
+                            var time =  DateTime.Now - startTime;
+                            Debug.WriteLine($"WIN!!! Time: {(int)time.TotalMinutes}:{time.Seconds}:{time.Milliseconds/100}");
+                            
+                            //var t = time.Pa
+
+                            game.Score += (int)((1 - time.TotalMilliseconds / (stk.Count * 60000)) * 500); //time bonus 
+                            Debug.WriteLine(game.Score);
+                        }
                     }
+                    //Wrong word
                     else
                     {
                         ((Button)stk[btnClkd_y].Children[btnClkd_x]).Background = prevClr;
+
                     }
                     btnClkd_x = -1;
                     btnClkd_y = -1;
