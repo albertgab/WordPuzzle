@@ -28,6 +28,12 @@ namespace WordPuzzleBusiness
                 return "Wrong password!";
             }
         }
+
+        public string Register(string email, string username, string password, string country = "Unknown") { 
+            //User = new User() { }
+                //db.SaveChanges();
+            return "";
+        }
         public List<Level> LoadLevelsList()
         {
             

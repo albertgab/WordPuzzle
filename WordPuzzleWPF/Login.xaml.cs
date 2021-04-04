@@ -61,8 +61,8 @@ namespace WordPuzzleWPF
 
         private void buttonSignIn_Clicked(object sender, RoutedEventArgs e)
         {
-            SignIn sign = new SignIn();
-            sign.Show();
+            Register register = new Register();
+            register.Show();
         }
     }
 }
