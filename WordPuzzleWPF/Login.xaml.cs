@@ -54,8 +54,6 @@ namespace WordPuzzleWPF
             {
                 textBlock.Foreground = Brushes.Red;
                 textBlock.Text = message;
-                textBoxEmail.Text = "";
-                passwordBox.Password = "";
             }
         }
 

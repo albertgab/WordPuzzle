@@ -10,7 +10,7 @@ Username VARCHAR (20) NOT NULL CHECK (LEN(Username) > 4),
 Password VARCHAR (30) NOT NULL CHECK (LEN(Password) > 5),
 Score INT NOT NULL DEFAULT 0,
 UserType CHAR(1) NOT NULL CHECK (UserType = 'M' OR UserType = 'A'),
-Email VARCHAR (70) NOT NULL UNIQUE,
+Email VARCHAR (70) NOT NULL UNIQUE CHECK (LEN(Email) > 5),
 Country VARCHAR (70) DEFAULT 'Unknown'
 );
 

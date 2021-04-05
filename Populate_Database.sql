@@ -169,3 +169,123 @@ INSERT INTO [History]
      VALUES
 	 		     (2,2, '00:03:29', 423, '2021-04-02 18:46:58')
 ;
+
+
+
+
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+	 		     ('Fruits', 20, 20, 'DYTANGERINEFBJEQWFIGASVBKYREWWMHHMUREMSADTYIOWGHJKPOMELOAOHJGBANANAKRUUNFDJKARZNRRCFHHHGKFFXVHHRIAXCETZJJGSSPGSCQHGEKNFSKGXSGKFDLHDNDBFEJGRTMRVFRUSSUJHHAPPLEETRNEBHAHFGMHDTCNFRHQYAXNNYPMXHJWQTBKFNAWNWWANDESBHHDRRPXCHSBNBIDGCFDEHRQRDECCGUUAELERFRXMELONQAXXSKCRRDBERUETGEEWZRWFADHYRQHWRIFOJDTWXMASVGEUYEYSYTSKIWINMGWAHFRIKJQWJTZOSDRHMWAUJTRHHHQEHGCRQGOOSEBERRYGDDWTYHGETTRRMMPTTRSEAHGYQKVCYITDDZNEEZZEI')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'TANGERINE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'GOOSEBERRY')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'BANANA')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'GRENADE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'ORANGE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'APPLE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'PEAR')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'CHERRY')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'STRAWBERRY')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'POMELO')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'PLUM')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'GRAPEFRUIT')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'FIG')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'KIWI')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (3,'MELON')
+;

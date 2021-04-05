@@ -19,7 +19,7 @@ namespace WordPuzzleBusiness
             using (var db = new WordPuzzleContext())
             {
                 var userQuery = db.Users.Where((u) => u.Email == email).FirstOrDefault();
-                if(userQuery is null) { return $"Couldn't find an account with the username: {email}"; }
+                if (userQuery is null) { return $"Couldn't find an account with the e-mail: {email}"; }
                 if (userQuery.Password == password) {
                     User = userQuery;
                     //_mode = 1;
@@ -29,11 +29,36 @@ namespace WordPuzzleBusiness
             }
         }
 
-        public string Register(string email, string username, string password, string country = "Unknown") { 
-            //User = new User() { }
-                //db.SaveChanges();
+        public string Register(string email, string username,
+            string password, string passwordConf, string country)
+        {
+            if (country == "") { country = "Unknown"; }
+            User = new User() { Email = email, Username = username, Password = password, Country = country, UserType = "M" };
+            using (var db = new WordPuzzleContext())
+            {
+                if(password != passwordConf) { return "Passwords are not equal!"; }
+                try
+                {
+                    db.Users.Add(User);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    var exM = (ex.InnerException is not null) ? ex.InnerException.Message : "";
+                    if (exM.Contains("CHECK"))
+                    {
+                        return $"{exM[(exM.IndexOf("column '") + 8)..exM.LastIndexOf("'")]} is too short!";
+                    }
+                    if (exM.Contains("UNIQUE"))
+                    {
+                        return "This e-mail is already in use!";
+                    }
+                    return "Unknown error during registration!";
+                }
+            }
             return "";
-        }
+        } 
+          
         public List<Level> LoadLevelsList()
         {
             

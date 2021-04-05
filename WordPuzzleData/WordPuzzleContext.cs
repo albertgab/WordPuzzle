@@ -27,7 +27,7 @@ namespace WordPuzzleData
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=WordPuzzle;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog = WordPuzzle; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
             }
         }
 
@@ -76,7 +76,7 @@ namespace WordPuzzleData
 
             modelBuilder.Entity<Solution>(entity =>
             {
-                entity.HasIndex(e => new { e.LevelId, e.Word }, "UQ__Solution__80AB6C17C1BCD03A")
+                entity.HasIndex(e => new { e.LevelId, e.Word }, "UQ__Solution__80AB6C176EC0AD62")
                     .IsUnique();
 
                 entity.Property(e => e.SolutionId).HasColumnName("SolutionID");
@@ -97,7 +97,7 @@ namespace WordPuzzleData
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Users__A9D10534EF3642FC")
+                entity.HasIndex(e => e.Email, "UQ__Users__A9D105349104BCD3")
                     .IsUnique();
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");

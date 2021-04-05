@@ -29,23 +29,22 @@ namespace WordPuzzleWPF
 
         private void buttonRegister(object sender, RoutedEventArgs e)
         {
-            //var message = game.Register(, passwordBox.Password);
-            //if (message == "")
-            //{
-            //    textBlock.Foreground = Brushes.Green;
-            //    textBlock.Text = "Successfully registerd new account!";
-            //    MainWindow main = new MainWindow();
-            //    main.Show();
-            //    textBoxEmail.Text = "";
-            //    passwordBox.Password = "";
-            //}
-            //else
-            //{
-            //    textBlock.Foreground = Brushes.Red;
-            //    textBlock.Text = message;
-            //    textBoxEmail.Text = "";
-            //    passwordBox.Password = "";
-            //}
+            var message = game.Register(textBoxEmail.Text, textBoxUsername.Text,
+                passwordBox.Password, passwordBoxConf.Password, textBoxCountry.Text);
+            if (message == "")
+            {
+                textBlock.Foreground = Brushes.Green;
+                textBlock.Text = "Successfully registerd new account!";
+                MainWindow main = new MainWindow();
+                main.Show();
+                this.Close();
+                Debug.WriteLine(game.User.UserId.ToString() + game.User.Email + game.User.Username + game.User.Password + game.User.Country);
+            }
+            else
+            {
+                textBlock.Foreground = Brushes.Red;
+                textBlock.Text = message;
+            }
         }
     
         private void buttonBackToLogin(object sender, RoutedEventArgs e)

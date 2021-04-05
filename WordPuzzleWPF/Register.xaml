@@ -7,19 +7,21 @@
         mc:Ignorable="d"
         Title="Register" Height="343" Width="374">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="20,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="99" Height="18"><Run Language="pl-pl" Foreground="Red" Text="*"/><Run Text="E-mail:"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="textBlockEmail" HorizontalAlignment="Left" Margin="20,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="99" Height="18"><Run Language="pl-pl" Foreground="Red" Text="*"/><Run Text="E-mail:"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Margin="126,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="169,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="20" TextAlignment="Center"><Run Language="pl-pl" Text="Register"/></TextBlock>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="20,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="99" Height="18"><Run Foreground="Red" Text="*"/><Run Language="pl-pl" Text="Username"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="textBoxUsername" HorizontalAlignment="Left" Margin="126,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
         <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="20,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="99" Height="18"><Run Foreground="Red" Text="*"/><Run Language="pl-pl" Text="Password:"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Margin="126,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <PasswordBox x:Name="passwordBox"  HorizontalAlignment="Left" Margin="126,144,0,0" VerticalAlignment="Top" Width="210"/>
         <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="-2,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="121" Height="18"><Run Foreground="Red" Text="*"/><Run Language="pl-pl" Text="Confirm Password"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="textBoxPasswordConf" HorizontalAlignment="Left" Margin="126,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <PasswordBox x:Name="passwordBoxConf" HorizontalAlignment="Left" Margin="126,184,0,0" VerticalAlignment="Top" Width="210"/>
         <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="20,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" Width="99" Height="18"><Run Language="pl-pl" Text="Country:"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="textBoxCountry" HorizontalAlignment="Left" Margin="126,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="222,264,0,0" VerticalAlignment="Top" Height="37" Width="114" Click="buttonRegister"/>
-        <Button x:Name="button1" Content="Back to Log In" Margin="24,10,0,0" HorizontalAlignment="Left" Width="91" Height="36" VerticalAlignment="Top" Click="buttonBackToLogin"/>
+        <Button x:Name="buttonReg" Content="Register" HorizontalAlignment="Left" Margin="222,264,0,0" VerticalAlignment="Top" Height="37" Width="114" Click="buttonRegister"/>
+        <Button x:Name="buttonLog" Content="Back to Log In" Margin="24,10,0,0" HorizontalAlignment="Left" Width="91" Height="36" VerticalAlignment="Top" Click="buttonBackToLogin"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="24,243,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="312" TextAlignment="Center"/>
+
 
     </Grid>
 </Window>
