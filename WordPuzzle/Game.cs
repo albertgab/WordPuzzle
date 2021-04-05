@@ -14,12 +14,12 @@ namespace WordPuzzleBusiness
         public int Score { get; set; } = 0;
         public TimeSpan Time { get; set; }
 
-        public string Login(string username, string password)
+        public string Login(string email, string password)
         {
             using (var db = new WordPuzzleContext())
             {
-                var userQuery = db.Users.Where((u) => u.Username == username).FirstOrDefault();
-                if(userQuery is null) { return $"Couldn't find an account with the username: {username}"; }
+                var userQuery = db.Users.Where((u) => u.Email == email).FirstOrDefault();
+                if(userQuery is null) { return $"Couldn't find an account with the username: {email}"; }
                 if (userQuery.Password == password) {
                     User = userQuery;
                     //_mode = 1;
@@ -55,9 +55,8 @@ namespace WordPuzzleBusiness
         }
         public void GameFinished(TimeSpan time)
         {
-            //if (User.Score is null) User.Score = 0;
             User.Score += Score;
-            History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time }; //DateTime = DateTime.Now()
+            History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
             Score = 0;
             //using (var db = new WordPuzzleContext()) db.SaveChanges();
             //new WordPuzzleContext().SaveChanges();

@@ -41,6 +41,8 @@ namespace WordPuzzleData
 
                 entity.Property(e => e.HistoryId).HasColumnName("HistoryID");
 
+                entity.Property(e => e.DateTime).HasColumnType("smalldatetime");
+
                 entity.Property(e => e.LevelId).HasColumnName("LevelID");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
@@ -74,12 +76,15 @@ namespace WordPuzzleData
 
             modelBuilder.Entity<Solution>(entity =>
             {
-                entity.HasKey(e => new { e.LevelId, e.Word })
-                    .HasName("PK__Solution__80AB6C16C155AC02");
+                entity.HasIndex(e => new { e.LevelId, e.Word }, "UQ__Solution__80AB6C17C1BCD03A")
+                    .IsUnique();
+
+                entity.Property(e => e.SolutionId).HasColumnName("SolutionID");
 
                 entity.Property(e => e.LevelId).HasColumnName("LevelID");
 
                 entity.Property(e => e.Word)
+                    .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -92,12 +97,31 @@ namespace WordPuzzleData
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.HasIndex(e => e.Email, "UQ__Users__A9D10534EF3642FC")
+                    .IsUnique();
+
                 entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.Country)
+                    .HasMaxLength(70)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('Unknown')");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(70)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
+
+                entity.Property(e => e.UserType)
+                    .IsRequired()
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.Username)
                     .IsRequired()

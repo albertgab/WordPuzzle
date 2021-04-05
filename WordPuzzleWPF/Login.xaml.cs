@@ -34,7 +34,7 @@ namespace WordPuzzleWPF
         }
         public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
         {
-            var message = game.Login(textBoxUsername.Text, passwordBox.Password);
+            var message = game.Login(textBoxEmail.Text, passwordBox.Password);
             if (message == "")
             {
                 textBlock.Foreground = Brushes.Green;
@@ -47,14 +47,14 @@ namespace WordPuzzleWPF
                 //loginUC.UserControlClicked;
                 MainWindow main = new MainWindow();
                 main.Show();
-                textBoxUsername.Text = "";
+                textBoxEmail.Text = "";
                 passwordBox.Password = "";
             }
             else
             {
                 textBlock.Foreground = Brushes.Red;
                 textBlock.Text = message;
-                textBoxUsername.Text = "";
+                textBoxEmail.Text = "";
                 passwordBox.Password = "";
             }
         }
@@ -86,13 +86,13 @@ namespace WordPuzzleWPF
                 var user = new User();
                 using (var db = new WordPuzzleContext())
                 {
-                    user = db.Users.Where((u) => u.Username == "Spartacus").FirstOrDefault();
+                    user = db.Users.Where((u) => u.Email == "Spartacus").FirstOrDefault();
                 }
             }
 
             private void buttonLogin_Clicked(object sender, RoutedEventArgs e)
             {
-                var message = game.Login(textBoxUsername.Text, textBoxPassword.Text);
+                var message = game.Login(textBoxEmail.Text, textBoxPassword.Text);
                 if (message == "")
                 {
                     textBlock.Text = "Successfully logged in to your WordPuzzle account!";
@@ -104,15 +104,15 @@ namespace WordPuzzleWPF
                 else
                 {
                     textBlock.Text = message;
-                    textBoxUsername.Text = "";
+                    textBoxEmail.Text = "";
                     textBoxPassword.Text = "";
                 }
-                //textBlock.Text = game.User.Username + game.User.Password;
+                //textBlock.Text = game.User.Email + game.User.Password;
                 //var win2 = new Window1();
                 //win2.Show();
             }
 
-            private void textBoxUsername_TextChanged(object sender, TextChangedEventArgs e)
+            private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
             {
 
             }

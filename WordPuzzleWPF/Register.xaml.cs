@@ -36,14 +36,14 @@ namespace WordPuzzleWPF
             //    textBlock.Text = "Successfully registerd new account!";
             //    MainWindow main = new MainWindow();
             //    main.Show();
-            //    textBoxUsername.Text = "";
+            //    textBoxEmail.Text = "";
             //    passwordBox.Password = "";
             //}
             //else
             //{
             //    textBlock.Foreground = Brushes.Red;
             //    textBlock.Text = message;
-            //    textBoxUsername.Text = "";
+            //    textBoxEmail.Text = "";
             //    passwordBox.Password = "";
             //}
         }

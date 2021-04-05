@@ -12,6 +12,7 @@ namespace WordPuzzleData
         public int LevelId { get; set; }
         public TimeSpan Time { get; set; }
         public int Score { get; set; }
+        public DateTime DateTime { get; set; }
 
         public virtual Level Level { get; set; }
         public virtual User User { get; set; }

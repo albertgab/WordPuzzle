@@ -1,53 +1,61 @@
 ﻿INSERT INTO [Users]
            ([Username]
            ,[Password]
+           ,[UserType]
+           ,[Email]
+           ,[Country]
            )
      VALUES
-	 		     ('Leonidas','Sparta123')
+	 		     ('Leonidas','Sparta123','M','sparta@gmail.com','United Kingdom')
 ;
 
 INSERT INTO [Users]
            ([Username]
            ,[Password]
+           ,[UserType]
+           ,[Email]
+           ,[Country]
            )
      VALUES
-	 		     ('Boomer','qwe321')
+	 		     ('Boomer','qwe321','A','admin@gmail.com','France')
 ;
 
 INSERT INTO [Levels]
            ([Name]
-           ,[Size]
+           ,[SizeX]
+           ,[SizeY]
            ,[Letters]
            )
      VALUES
-	 		     ('Animals', 1010, 'JSDOIVBPOA' +
-                                   'ASDGMONKEY' +
-                                   'UXZYUIVTOS' +
-                                   'KJTGVBLWSE' +
-                                   'IGIRAFFESH' +
-                                   'DSGKUIVGHE' +
-                                   'IZEBRAVBOI' +
-                                   'PWRIEVUOZW' +
-                                   'XIPUCHZXPE' +
-                                   'BELKUIVGSR')
+	 		     ('Animals', 10, 10, 'JSDOIVBPOA' +
+                                     'ASDGMONKEY' +
+                                     'UXZYUIVTOS' +
+                                     'KJTGVBLWSE' +
+                                     'IGIRAFFESH' +
+                                     'DSGKUIVGHE' +
+                                     'IZEBRAVBOI' +
+                                     'PWRIEVUOZW' +
+                                     'XIPUCHZXPE' +
+                                     'BELKUIVGSR')
 ;
 
 INSERT INTO [Levels]
            ([Name]
-           ,[Size]
+           ,[SizeX]
+           ,[SizeY]
            ,[Letters]
            )
      VALUES
-	 		     ('Food', 1010, 'SFGHDFHDFH' +
-                                'NUGGETSTRN' +
-                                'TAEHIVPLCE' +
-                                'VZXOIUAEWE' +
-                                'ZBUTBNGHEO' +
-                                'OUIDHBHDOI' +
-                                'VNOODLESVR' +
-                                'AWEGUVTDFV' +
-                                'ZCURRYTBSE' +
-                                'ERSLIPIZZA')
+	 		     ('Food', 10, 10, 'SFGHDFHDFH' +
+                                  'NUGGETSTRN' +
+                                  'TAEHIVPLCE' +
+                                  'VZXOIUAEWE' +
+                                  'ZBUTBNGHEO' +
+                                  'OUIDHBHDOI' +
+                                  'VNOODLESVR' +
+                                  'AWEGUVTDFV' +
+                                  'ZCURRYTBSE' +
+                                  'ERSLIPIZZA')
 ;
 
 INSERT INTO [Solutions]
@@ -134,9 +142,10 @@ INSERT INTO [History]
            ,[LevelID]
            ,[Time]
            ,[Score]
+           ,[DateTime]
            )
      VALUES
-	 		     (2,1, '00:05:34', 354)
+	 		     (2,1, '00:05:34', 354, '2021-03-26 21:32:43')
 ;
 
 INSERT INTO [History]
@@ -144,9 +153,10 @@ INSERT INTO [History]
            ,[LevelID]
            ,[Time]
            ,[Score]
+           ,[DateTime]
            )
      VALUES
-	 		     (2,2, '00:07:54', 257)
+	 		     (2,2, '00:07:54', 257, '2021-03-22 12:42:10')
 ;
 
 INSERT INTO [History]
@@ -154,7 +164,8 @@ INSERT INTO [History]
            ,[LevelID]
            ,[Time]
            ,[Score]
+           ,[DateTime]
            )
      VALUES
-	 		     (2,2, '00:03:29', 423)
+	 		     (2,2, '00:03:29', 423, '2021-04-02 18:46:58')
 ;

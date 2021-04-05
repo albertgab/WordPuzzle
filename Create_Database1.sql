@@ -11,7 +11,7 @@ Password VARCHAR (30) NOT NULL CHECK (LEN(Password) > 5),
 Score INT NOT NULL DEFAULT 0,
 UserType CHAR(1) NOT NULL CHECK (UserType = 'M' OR UserType = 'A'),
 Email VARCHAR (70) NOT NULL UNIQUE,
-Country VARCHAR (70) DEFAULT "Unknown"
+Country VARCHAR (70) DEFAULT 'Unknown'
 );
 
 CREATE TABLE History(
@@ -28,8 +28,8 @@ LevelID  INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 Name VARCHAR (30) NOT NULL, 
 SizeX INT NOT NULL CHECK (SizeX >= 10 AND SizeX <= 99),
 SizeY INT NOT NULL CHECK (SizeY >= 10 AND SizeY <= 99),
-Letters VARCHAR (MAX) NOT NULL CHECK (LEN(Letters) = (SizeX * SizeY))
-
+Letters VARCHAR (MAX) NOT NULL,
+CONSTRAINT ck_letters_size CHECK(LEN(Letters) = (SizeX * SizeY))
 );
 
 CREATE TABLE Solutions(

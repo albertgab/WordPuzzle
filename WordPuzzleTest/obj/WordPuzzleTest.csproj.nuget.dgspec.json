@@ -138,7 +138,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.9.1, )"
+              "version": "[16.9.4, )"
             },
             "NUnit": {
               "target": "Package",

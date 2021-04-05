@@ -12,11 +12,7 @@ namespace WordPuzzleData
     {
         public override string ToString()
         {
-            return $"{LevelId}. {Size/100}x{Size%100} {Name}";
-            //using (var db = new WordPuzzleContext())
-            {
-                //return $"{db.Levels.LevelId}";
-            }
+            return $"{LevelId}. {SizeX}x{SizeY} {Name}";
         }
     }
 }
