@@ -3,12 +3,24 @@
   <Class Name="WordPuzzleBusiness.Game">
     <Position X="1.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAgAAAAAAAQEAAABAAABAAAQAIAAAQA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAgAAAAAAIYEAAABAAABAAAQAIAAAQA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Level" />
+      <Property Name="User" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WordPuzzleData.WordPuzzleContext">
     <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="WordPuzzleData.Level" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="WordPuzzleData.User" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />

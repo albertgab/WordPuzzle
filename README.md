@@ -7,8 +7,9 @@ It contributes to improving the language fluency and problem-solving skills of m
 3. The Code is fully documented and ready to deploy.
 4. The stakeholder is happy with the product.
 
-## The Final Sprint:
+## Sprint no. 1:
 **Sprint goal:** Get a fully working and tested program.
+
 DONE                      |LEFT TO TEST       |NOT DONE
 --------------------------|-----------------  |----------
 Prepare a solution        |Playing            |History   
@@ -20,16 +21,23 @@ Timer                     |                   |
 Leaderboard||
 Logout ||
 
+![Before the first Sprint](Screenshots_of_backlog/Before_Sprint_1.jpg)
 
-## Sprint retrospective:
-### What went well?
+
+### Sprint retrospective:
+#### What went well?
 - I managed to make a pretty complex project.
 - The work was committed often and regular.
 - Error handling works great.
-### What needs improvement?
+#### What needs improvement?
 - Test-driven development should be used more often.
 - If the given approach took already too much time, try make it the other way.
 - Make more quick breaks that give a fresh look.
+#### Actions
+- Write uni tests for Login and Logout.
+- Implement History and Changing Detials.
+
+![After the first Sprint](Screenshots_of_backlog/After_Sprint_1.jpg)
 
 ## Project retrospective
 ### What have I learned?
@@ -65,3 +73,5 @@ Just to run the app:
 To view the code:
 4. Open WordPuzzle.sln in Visual Studio.
 5. In WordPuzzleData\WordPuzzleContext.cs put our connection string in to optionsBuilder.UseSqlServer('connetction string').
+
+```
