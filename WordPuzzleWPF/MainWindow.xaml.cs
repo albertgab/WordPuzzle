@@ -33,7 +33,7 @@ namespace WordPuzzleWPF
 
         //((Login) Application.Current.Login)
         //((MainWindow) System.Windows.Application.Current.MainWindow).;
-        Game game = ((Login)Application.Current.MainWindow).game;
+        public Game game = ((Login)Application.Current.MainWindow).game;
         Brush prevClr;
         MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
         List<StackPanel> stk = new List<StackPanel>();
@@ -49,6 +49,7 @@ namespace WordPuzzleWPF
             InitializeComponent();
             //frameMain.Content = new Login();
             listOfLevels.ItemsSource = game.LoadLevelsList();
+            textBlockUsername.Text = game.User.Username;
 
 
             //var b1 = new Button { Content = "b1" };
@@ -99,7 +100,20 @@ namespace WordPuzzleWPF
         {
             //puzzle =  new List<Button>[x, y];
             //StackPanel stk;
-            if (!game.LoadLevel(listOfLevels.SelectedItem.ToString()[0]-'0')) { MessageBox.Show("Problem with loading the level!"); return; }
+            //var lvlId = listOfLevels.SelectedItem.ToString()[0..2];
+            //var lvlll = Int32.Parse((string)lvlId.TakeWhile((c) => Char.IsLetter(c)));
+            //int lvlId = Int32.Parse((string)listOfLevels.SelectedItem.ToString()[0..3].TakeWhile(c => Char.IsLetter(c)));
+            var lvlIdList = listOfLevels.SelectedItem.ToString()[0..3].TakeWhile(c => Char.IsDigit(c)).ToList();
+            var lvlId = "";
+            foreach (var item in lvlIdList) { lvlId += item; }
+            //for(int i = 0; i < 3; i++)
+            //{
+            //    Char.IsDigitlistOfLevels.SelectedItem.ToString()[i]
+            //}
+
+
+
+            if (!game.LoadLevel(Int32.Parse(lvlId))) { MessageBox.Show("Problem with loading the level!"); return; }
             stk.Clear();
             var sizeInPcl = stackLvl.ActualHeight;
             var max_x = game.Level.SizeX;
@@ -110,8 +124,12 @@ namespace WordPuzzleWPF
                 stk.Add(new StackPanel() { Name = $"row_{y}", Orientation = Orientation.Horizontal, Height = sizeInPcl / max_y });
                 for (int x = 0; x < max_x; x++)
                 {
-                    var button = new Button() { Name = $"b{x}x{y}", Content = game.Level.Letters[y * max_x + x],
-                        Width = sizeInPcl / max_x, Height = sizeInPcl / max_y, Tag = (x < 10 ? "0" : "") + x + (y < 10 ? "0":"") + y };
+                    var button = new Button()
+                    {
+                        Name = $"b{x}x{y}",
+                        Content = game.Level.Letters[y * max_x + x],
+                        Width = sizeInPcl / max_x, Height = sizeInPcl / max_y,
+                        Tag = (x < 10 ? "0" : "") + x + (y < 10 ? "0":"") + y };
                     button.Click += ClickOnLetter;
                     //puzzle[i].Add(new Button());
                     //puzzleRow.Add(new Button() { Name = $"b{i}x{j}", Content = game.Level.Letters[i * x + j], Width = sizeInPcl / x, Height = sizeInPcl / y});
@@ -212,6 +230,12 @@ namespace WordPuzzleWPF
             Debug.WriteLine($"{word}");
 
 
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Leaderboard leaderboard = new Leaderboard();
+            leaderboard.Show();
         }
     }
 }

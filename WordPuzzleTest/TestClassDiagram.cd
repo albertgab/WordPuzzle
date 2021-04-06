@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WordPuzzleTest.Tests">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABACACAAAAAAQAABAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>RegisterTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WordPuzzleBusiness.Game">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

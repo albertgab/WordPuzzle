@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace WordPuzzleBusiness
         {
             using (var db = new WordPuzzleContext())
             {
-                var userQuery = db.Users.Where((u) => u.Email == email).FirstOrDefault();
+                var userQuery = db.Users.Where(u => u.Email == email).FirstOrDefault();
                 if (userQuery is null) { return $"Couldn't find an account with the e-mail: {email}"; }
                 if (userQuery.Password == password) {
                     User = userQuery;
@@ -26,6 +27,17 @@ namespace WordPuzzleBusiness
                     return "";
                 }
                 return "Wrong password!";
+            }
+        }
+
+        public IEnumerable LoadLeaderboard()
+        {
+            using (var db = new WordPuzzleContext())
+            {
+                
+                var list = db.Histories.Where(h => h.LevelId == Level.LevelId).ToList()
+                    .OrderBy(h => h.Score).Reverse();
+                return list;
             }
         }
 
@@ -81,10 +93,14 @@ namespace WordPuzzleBusiness
         public void GameFinished(TimeSpan time)
         {
             User.Score += Score;
+            time = new TimeSpan (time.Hours,time.Minutes,time.Seconds);
             History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
             Score = 0;
-            //using (var db = new WordPuzzleContext()) db.SaveChanges();
-            //new WordPuzzleContext().SaveChanges();
+            using (var db = new WordPuzzleContext())
+            {
+                db.Histories.Add(newRec);
+                db.SaveChanges();
+            }
         }
     }
 }

@@ -289,3 +289,720 @@ INSERT INTO [Solutions]
      VALUES
 	 		     (3,'MELON')
 ;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+
+                ('Vegetables', 20, 20, 'FXUEAWONIONQGJSGAYTWRTHTRACRTGDDYPOTATODGRNCELERYSDDUYSDSYYHBABSWWZRTCUCUMBERDDTGSVEEEXTRDVFUKDFSDLEAGTOMATOSGWUUIUCDFEKRKMSVSCUSGCARROTATTJLJNVERZISSQFUUZYEITHIGUSATXPADCGYYZPHFUKCYMRWDCODHAETTWOGICJNWCABBAGEFUGRDTIGPEQYEFFWFBICGLDERRUJYIFWPARSLEYEWIHYSAHKFRHWSFSQPVUWWFGUQDYODEITRPEPPERQELJHQIEHSQOGTDTEPBTRROOFESSLEWPFBYETIHFYYWPDWHERYRYSEGTGUGUUYEUEEYTAYTSHADSHPHIJHRUHTHRBDEVFNMEFIJKTTTYJYBYISST')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'ONION')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'POTATO')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'CELERY')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'CUCUMBER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'LETTUCE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'CARROT')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'GARLIC')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'TOMATO')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'CABBAGE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'PARSLEY')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'CAULIFLOWER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'PEPPER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'BEAN')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'RADISH')
+
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (4,'KOHLRABI')
+;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Drinks', 10, 10, 'GHUORXJLPOWWATERGACKTKLTBBDDOPIOIJEOFQCIDSNOSAIMKFRCXIZEHJTUIEAKCKPOARNWXJUICEITKCCOFFEELZDFRDSHUQWW')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'WATER')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'COFFEE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'JUICE')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'COCKTAIL')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'DRINK')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'TEA')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'TONIC')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (5,'SODA')
+;
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                  ('Dishes', 10, 10, 'SFGSSUSHIIGNBVETQWZXBGBHVFTNHAZUUXCCUNTSHXRXCGRMACOCRGGFKVKQTHIEEHEJKADNTCMRYJOGOSOFISHUJYGJGYPIZZAE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'PIZZA')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'FISH')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'TURKEY')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'BURRITO')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'HOTDOG')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'NUGGETS')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'BURGER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (6,'SUSHI')
+;
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Vehicles', 10, 10, 'MOTORCYCLEASDDFGBUGBASPLANEFFISENNMUTQAKKJJFTRAINELSCOOTERADLOYRRDRAXBPUYSAKRVBUCARJJFERSSLSUBWAYKSI')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'TRAIN')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'SUBWAY')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'BUS')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'BIKE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'CAR')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+                VALUES
+	 		     (7,'MOTORCYCLE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'SCOOTER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (7,'PLANE')
+;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Professional', 10, 10, 'JTEACHERJOJOURNALISTCOOKPIUFSAFRFDDOCTORCVSBLNNVETRNIYAHBMKLEUNRWVVBYWZRGXYZCDVRWSERERTGHNYERTRBFRTB')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'COOK')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'TEACHER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'SINGER')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'LAWYER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'DOCTOR')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'VET')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'NURSE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (8,'JOURNALIST')
+;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Body', 10, 10, 'GFDBHEYEJOQHEARTTYUHANKGSEMMSAFRTHUITOYNIQAEHFNUBDNIBANRQTOPGZODVNNHUKEXZCBEHJPORIKLLROLEGUIZNOSEQXC')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'EYE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'HEAD')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'NOSE')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'FINGER')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'LEG')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'HEART')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (9,'HAND')
+;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('House', 10, 10, 'CHDSOFAOUPHETABLEDSLADJHKLFCSAIVTTBHHAHFRJKOFSERGUQWDOORUPULBDBYEHMEKAEYTNCEYTYMDSHKODBMIPEWINDOWYUI')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'SOFA')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'WINDOW')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'LAMP')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'CARPET')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'BED')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'CHAIR')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'TABLE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (10,'DOOR')
+;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Plants', 10, 10, 'GROSEJNOAKSJWYCCNPKSUDJUVLDIAJNADIMKANWAFISQKHFEVSLSOWHDFZBMOYWDNXOCMIWTULIPDHINETQHBNIEYERFHBNMLILY')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'SUNFLOWER')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'ROSE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'DAISY')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'DAFFODIL')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'JASMINE')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'OAK')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'PINE')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (11,'LILY')
+;
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+                ('Sport', 10, 10, 'FRTTETNBYUGSKIGEJADOHUHXFNWSJYJRIBHNEKUFSFAOSISEDBWIWXDSDTOGRNQGOKHBEOIGWSLLTARLOFOOTBALLFLHRUOKHLRE')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'TENNIS')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'BASKETBALL')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'FOOTBALL')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'SKI')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'JUDO')
+;
+
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'SURFING')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'BOX')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (12,'GOLF')
+;
