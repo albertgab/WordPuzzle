@@ -102,5 +102,9 @@ namespace WordPuzzleBusiness
                 db.SaveChanges();
             }
         }
+        public void Logout()
+        {
+            User = null;
+        }
     }
 }

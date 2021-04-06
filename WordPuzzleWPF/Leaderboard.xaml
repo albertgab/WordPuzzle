@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordPuzzleWPF"
         mc:Ignorable="d"
-        Title="Leaderboard" Height="450" Width="800">
-    <Grid Margin="0,0,319,9">
-        <ListBox x:Name="listBox"/>
+        Background="#f8ede3"
+        Title="Leaderboard" Height="420" Width="300">
+    <Grid>
+        <ListBox x:Name="listBox" Background="#bdd2b6" Margin="0,27,0,0"/>
+        <TextBlock x:Name="textBlock" Text="Score Username  Time      Date" TextWrapping="Wrap" Margin="10,6,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="290"/>
 
     </Grid>
 </Window>

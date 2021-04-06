@@ -237,5 +237,12 @@ namespace WordPuzzleWPF
             Leaderboard leaderboard = new Leaderboard();
             leaderboard.Show();
         }
+
+        private void buttonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            ((Login)Application.Current.MainWindow).textBlock.Text = "You've been logged out.";
+            game.Logout();
+        }
     }
 }
