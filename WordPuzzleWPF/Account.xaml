@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordPuzzleWPF"
         mc:Ignorable="d"
+        Background="#f8ede3"
         Title="Account" Height="326" Width="333">
     <Grid>
-        <Button x:Name="buttonBack" Content="Back to levels" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="buttonBack_Click"/>
+        <Button x:Name="buttonBack" Background ="#a2b29f" Content="Back to levels" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="buttonBack_Click"/>
         <TextBlock x:Name="textBlockUsername" HorizontalAlignment="Left" Margin="220,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" TextAlignment="Right"><Run Language="pl-pl" Text="Username"/></TextBlock>
         <TextBlock x:Name="textBlockScore" HorizontalAlignment="Left" Margin="111,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextAlignment="Center"><Run Language="pl-pl" Text="Score"/></TextBlock>
         <Grid Margin="0,35,0,0">

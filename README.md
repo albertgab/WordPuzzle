@@ -31,13 +31,28 @@ Logout ||
 - Error handling works great.
 #### What needs improvement?
 - Test-driven development should be used more often.
-- If the given approach took already too much time, try make it the other way.
+- If the given approach took already too much time, try making it the other way.
 - Make more quick breaks that give a fresh look.
 #### Actions
-- Write uni tests for Login and Logout.
-- Implement History and Changing Detials.
+- Write unit tests for Login and Logout.
+- Implement History and Changing Details.
 
 ![After the first Sprint](Screenshots_of_backlog/After_Sprint_1.jpg)
+
+## Sprint no. 2:
+**Sprint goal:** Get the code ready for presentation.
+### Sprint retrospective:
+#### What went well?
+- I implemented some new features and tests.
+- The work was well organized and prioritized.
+- I had no blockers during this sprint.
+#### What needs improvement?
+- Test-driven development should be used more often.
+- The front-end could look better.
+- Make more quick breaks that give a fresh look.
+#### Actions
+- Present the project in front of other trainers.
+- Try to develop the product even after assignation.
 
 ## Project retrospective
 ### What have I learned?
@@ -73,5 +88,3 @@ Just to run the app:
 To view the code:
 4. Open WordPuzzle.sln in Visual Studio.
 5. In WordPuzzleData\WordPuzzleContext.cs put our connection string in to optionsBuilder.UseSqlServer('connetction string').
-
-```

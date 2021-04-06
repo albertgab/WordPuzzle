@@ -8,13 +8,13 @@
         Background="#bdd2b6"
         Title="Login" Height="374" Width="282">
     <Grid >
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="140,290,0,0" VerticalAlignment="Top" Height="39" Width="120" Click="buttonLogin_Clicked" FontSize="18"/>
+        <Button x:Name="button" Content="Login" Background ="#a2b29f" HorizontalAlignment="Left" Margin="140,290,0,0" VerticalAlignment="Top" Height="39" Width="120" Click="buttonLogin_Clicked" FontSize="18"/>
         <TextBox x:Name="textBoxEmail" Background="#f8ede3" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Margin="113,182,0,0"/>
         <PasswordBox x:Name="passwordBox" Background="#f8ede3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="113,218,0,0" Height="18" Password=""/>
         <TextBlock x:Name="textBlock1" Margin="43,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" TextAlignment="Right" HorizontalAlignment="Left" Width="56"><Run Language="pl-pl" Text="E-mail"/></TextBlock>
         <TextBlock x:Name="textBlock2" Margin="43,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" TextAlignment="Right" HorizontalAlignment="Left" Width="56"><Run Text="Password:"/></TextBlock>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="12,251,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="248" TextAlignment="Center"/>
         <Image x:Name="image" HorizontalAlignment="Center" Height="150" Margin="0,10,0,0" VerticalAlignment="Top" Width="150" Source="/Logo.png"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Margin="12,290,0,0" VerticalAlignment="Top" Height="39" Width="120" Click="buttonSignIn_Clicked" FontSize="18"/>
+        <Button x:Name="button1" Background ="#a2b29f" Content="Register" HorizontalAlignment="Left" Margin="12,290,0,0" VerticalAlignment="Top" Height="39" Width="120" Click="buttonSignIn_Clicked" FontSize="18"/>
     </Grid>
 </Window>
