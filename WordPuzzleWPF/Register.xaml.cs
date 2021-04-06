@@ -35,7 +35,7 @@ namespace WordPuzzleWPF
                 textBlock.Text = message;
             }
         }
-    
+
         private void buttonBackToLogin(object sender, RoutedEventArgs e)
         {
             this.Close();

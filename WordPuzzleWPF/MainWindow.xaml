@@ -13,10 +13,11 @@
             <ListBox x:Name="listOfLevels" Background="#f8ede3" SelectionChanged="listOfLevels_SelectionChanged" Margin="0,11,751,0" Height="728" VerticalAlignment="Top" />
 
             <StackPanel x:Name="stackLvl" Margin="265,39,0,0" RenderTransformOrigin="0.5,0.5" Width="700" Height="700" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left"></StackPanel>
-            <TextBlock x:Name="textBlockTimer" HorizontalAlignment="Left" Margin="331,10,0,0" Text="Time: 00:00" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-            <TextBlock x:Name="textBlockUsername" HorizontalAlignment="Left" Margin="842,13,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextAlignment="Right"/>
-            <Button x:Name="buttonLogout" Content="Logout" HorizontalAlignment="Left" Margin="718,11,0,0" VerticalAlignment="Top" Width="84" Click="buttonLogout_Click"/>
-            <Button x:Name="button" Content="Leaderboard" HorizontalAlignment="Left" Margin="488,11,0,0" VerticalAlignment="Top" Width="83" Click="button_Click"/>
+            <TextBlock x:Name="textBlockTimer" HorizontalAlignment="Left" Margin="258,10,0,0" Text="Time: 00:00" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
+            <TextBlock x:Name="textBlockUsername" HorizontalAlignment="Left" Margin="860,10,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextAlignment="Right"/>
+            <Button x:Name="buttonLogout" Content="Logout" HorizontalAlignment="Left" Margin="771,8,0,0" VerticalAlignment="Top" Width="84" Click="buttonLogout_Click"/>
+            <Button x:Name="button" Content="Leaderboard" HorizontalAlignment="Left" Margin="488,8,0,0" VerticalAlignment="Top" Width="82" Click="button_Click"/>
+            <TextBlock x:Name="textBlockLeft" HorizontalAlignment="Left" Margin="353,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="15.96"><Run Language="pl-pl"/></TextBlock>
         </Grid>
     </Grid>
 </Window>

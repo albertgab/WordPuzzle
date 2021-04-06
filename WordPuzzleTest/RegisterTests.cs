@@ -38,7 +38,7 @@ namespace WordPuzzleTest
                 Assert.AreEqual(numberOfUsersBefore, numberOfUsersAfter);
             }
         }
-        
+
         [Test]
         public void RegisterTwiceWithTheSameEmail()
         {
@@ -46,9 +46,9 @@ namespace WordPuzzleTest
             {
                 var numberOfUsersBefore = db.Users.Count();
                 game.Register("Testmail", "username", "passwo", "passwo", "");
-                game.Register("Testmail", "username", "passwo", "passwo","");
+                game.Register("Testmail", "username", "passwo", "passwo", "");
                 var numberOfUsersAfter = db.Users.Count();
-                Assert.AreEqual(numberOfUsersBefore+1, numberOfUsersAfter);
+                Assert.AreEqual(numberOfUsersBefore + 1, numberOfUsersAfter);
             }
         }
 
@@ -64,7 +64,7 @@ namespace WordPuzzleTest
                 var numberOfUsersBefore = db.Users.Count();
                 game.Register(email, username, password, passwordConf, "");
                 var numberOfUsersAfter = db.Users.Count();
-                Assert.AreEqual(numberOfUsersBefore +1, numberOfUsersAfter);
+                Assert.AreEqual(numberOfUsersBefore + 1, numberOfUsersAfter);
             }
         }
 

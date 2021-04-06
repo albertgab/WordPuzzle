@@ -19,7 +19,8 @@ namespace WordPuzzleBusiness
             {
                 var userQuery = db.Users.Where(u => u.Email == email).FirstOrDefault();
                 if (userQuery is null) { return $"Couldn't find an account with the e-mail: {email}"; }
-                if (userQuery.Password == password) {
+                if (userQuery.Password == password)
+                {
                     User = userQuery;
                     //_mode = 1;
                     return "";
@@ -32,7 +33,7 @@ namespace WordPuzzleBusiness
         {
             using (var db = new WordPuzzleContext())
             {
-                
+
                 var list = db.Histories.Where(h => h.LevelId == Level.LevelId).ToList()
                     .OrderBy(h => h.Score).Reverse();
                 return list;
@@ -46,7 +47,7 @@ namespace WordPuzzleBusiness
             User = new User() { Email = email, Username = username, Password = password, Country = country, UserType = "M" };
             using (var db = new WordPuzzleContext())
             {
-                if(password != passwordConf) { return "Passwords are not equal!"; }
+                if (password != passwordConf) { return "Passwords are not equal!"; }
                 try
                 {
                     db.Users.Add(User);
@@ -67,17 +68,17 @@ namespace WordPuzzleBusiness
                 }
             }
             return "";
-        } 
-          
+        }
+
         public List<Level> LoadLevelsList()
         {
-            
+
             using (var db = new WordPuzzleContext())
             {
                 var list = db.Levels.ToList();
                 return list;
             }
-            
+
         }
         public bool LoadLevel(int levelId)
         {
@@ -88,10 +89,22 @@ namespace WordPuzzleBusiness
             }
             return !(Level is null);
         }
+
+        public string WordsLeft()
+        {
+            using (var db = new WordPuzzleContext())
+            {
+                var words = db.Solutions.Where(s => s.LevelId == Level.LevelId).Count();
+            }
+            //var str = "";
+            return Level.Solutions.Count() != 1 ? $"{Level.Solutions.Count()} words left" : "1 word left";
+            //return "Level.Solutions();
+        }
+
         public void GameFinished(TimeSpan time)
         {
             User.Score += Score;
-            time = new TimeSpan (time.Hours,time.Minutes,time.Seconds);
+            time = new TimeSpan(time.Hours, time.Minutes, time.Seconds);
             History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
             Score = 0;
             using (var db = new WordPuzzleContext())

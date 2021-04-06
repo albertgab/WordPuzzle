@@ -1006,3 +1006,142 @@ INSERT INTO [Solutions]
      VALUES
 	 		     (12,'GOLF')
 ;
+
+INSERT INTO [Levels]
+           ([Name]
+           ,[SizeX]
+           ,[SizeY]
+           ,[Letters]
+           )
+     VALUES
+	 		     ('Capitols of Europe', 25, 25,'FGTRYUIIPJKPASEWRXFRATYUJKAZIOGXZSRRQWFEBGBIERHGSHPDSKLONDONSESLRVSNHBWGHDFODWSUHFZSFDDJIPBSMMDAJJUBGSEDNXZBRWFVYSPXDKNDRGKTEJEGADPXUTQPBTBUZFHUBSFFGROMHHFAFCURONDOISFJJTADMKLYAJGHRCHDJIMFNOWTJHUWSDGIIDURKIBAFLUMYFPRYHNMBWSUNQRIEHSNRBCOPENHAGENYRAFHFWIPWLONEOKTTUGOTFRGMTQRTSWDIRKKOSEJYRIBUJFTNHGWIRRAOMWUAPTQHGRPFBHFYGYHAGEFDLIHISOXWMJAMSTERDAMEXAABHMUQQALZUDOEOSNNHYEYRZSSVPOJKAOJHIYPFPAHCJWQRDDRYTPNDIBRUSSELSOHELSINKITRUGLAZPSUYJEUIEJADDJWQESFVOHUCCOFYUYRHYSHOASUSVWDFIUAIOSVTTQTTWQXYSFRAEEWFDLIEWIQFERIHYEWSELVWSRSFGSNKWRHMOSCOWUQTAEOBARSSBHFIJROFWFWTYIEHATHENSREVVTBUETYJRJRREIAJGRTWVROMACRGSRGYGIJFWWKSAFAGQHFFRRSFBZFG')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'LONDON')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'LISBON')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'WARSAW')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'BERLIN')
+
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'RIGA')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'COPENHAGEN')
+
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'BUCHAREST')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'PARIS')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'MADRID')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'MONACO')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'BRUSSELS')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'HELSINKI')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'AMSTERDAM')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'VILNIUS')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'ATHENS')
+;
+
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'ROMA')
+;
+INSERT INTO [Solutions]
+           ([LevelID]
+           ,[Word]
+           )
+     VALUES
+	 		     (13,'MOSCOW')
+;
