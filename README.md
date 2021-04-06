@@ -11,12 +11,15 @@ It contributes to improving the language fluency and problem-solving skills of m
 **Sprint goal:** Get a fully working and tested program.
 DONE                      |LEFT TO TEST       |NOT DONE
 --------------------------|-----------------  |----------
-Prepare a solution        |Playing            |Logout     
-Create GitHub repository  |Displaying a level |Leaderboard
-Create database           |Login              |History
+Prepare a solution        |Playing            |History   
+Create GitHub repository  |Displaying a level |Add admin
+Create database           |Login              |Add levels
 Setup Entity Framework    |                   |Changing details
-Registration              |                   |Add admin
-Timer                     |                   |Add levels
+Registration              |                   |
+Timer                     |                   |
+Leaderboard||
+Logout ||
+
 
 ## Sprint retrospective:
 ### What went well?
