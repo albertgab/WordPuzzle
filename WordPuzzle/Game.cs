@@ -29,11 +29,39 @@ namespace WordPuzzleBusiness
             }
         }
 
+        public IEnumerable LoadUserHistory()
+        {
+            using (var db = new WordPuzzleContext())
+            {
+                var list = db.Histories.Where(h => h.UserId== User.UserId).ToList()
+                    .OrderBy(h => h.DateTime).Reverse();
+                var listStr = new List<String>();
+                foreach(var item in list)
+                {
+                    listStr.Add(item.ToStringUser());
+                }
+                return listStr;
+            }
+        }
+        public List<string> UserHistory()
+        {
+            using (var db = new WordPuzzleContext())
+            {
+                var his = db.Histories.ToList();
+                var list = new List<string>();
+                foreach (var item in his)
+                {
+                    var lvlName = db.Levels.Where(l => l.LevelId == item.LevelId).FirstOrDefault().Name;
+                    list.Add($"{lvlName}  {item.Score}  {item.Time}  {item.DateTime}");
+                }
+                return list;
+            }
+        }
+
         public IEnumerable LoadLeaderboard()
         {
             using (var db = new WordPuzzleContext())
             {
-
                 var list = db.Histories.Where(h => h.LevelId == Level.LevelId).ToList()
                     .OrderBy(h => h.Score).Reverse();
                 return list;
@@ -72,13 +100,11 @@ namespace WordPuzzleBusiness
 
         public List<Level> LoadLevelsList()
         {
-
             using (var db = new WordPuzzleContext())
             {
                 var list = db.Levels.ToList();
                 return list;
             }
-
         }
         public bool LoadLevel(int levelId)
         {
@@ -92,13 +118,7 @@ namespace WordPuzzleBusiness
 
         public string WordsLeft()
         {
-            using (var db = new WordPuzzleContext())
-            {
-                var words = db.Solutions.Where(s => s.LevelId == Level.LevelId).Count();
-            }
-            //var str = "";
             return Level.Solutions.Count() != 1 ? $"{Level.Solutions.Count()} words left" : "1 word left";
-            //return "Level.Solutions();
         }
 
         public void GameFinished(TimeSpan time)
@@ -109,6 +129,7 @@ namespace WordPuzzleBusiness
             Score = 0;
             using (var db = new WordPuzzleContext())
             {
+                db.Users.Where(u => u.UserId == User.UserId).FirstOrDefault().Score = User.Score;
                 db.Histories.Add(newRec);
                 db.SaveChanges();
             }

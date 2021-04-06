@@ -27,7 +27,7 @@ namespace WordPuzzleWPF
         {
             InitializeComponent();
             listOfLevels.ItemsSource = game.LoadLevelsList();
-            textBlockUsername.Text = game.User.Username;
+            buttonUsername.Content = game.User.Username;
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 1);
         }
@@ -62,7 +62,8 @@ namespace WordPuzzleWPF
                         Content = game.Level.Letters[y * max_x + x],
                         Width = sizeInPcl / max_x,
                         Height = sizeInPcl / max_y,
-                        Tag = (x < 10 ? "0" : "") + x + (y < 10 ? "0" : "") + y
+                        Tag = (x < 10 ? "0" : "") + x + (y < 10 ? "0" : "") + y,
+                        FontSize = max_x > 35 ? 10 : max_x > 15 ? 12 : 17
                     };
                     button.Click += ClickOnLetter;
                     stk[y].Children.Add(button);
@@ -108,16 +109,13 @@ namespace WordPuzzleWPF
                             word += btns.Last().Content;
                         }
                     }
-                    Debug.WriteLine(game.Level.Solutions);
                     //Word found
                     if (game.Level.Solutions.Any(s => s.Word == word))
                     {
                         game.Level.Solutions.Remove(game.Level.Solutions.Where(s => s.Word == word).FirstOrDefault());
                         textBlockLeft.Text = game.WordsLeft();
                         game.Score += 100;
-                        Debug.WriteLine(stk.Count);
                         foreach (var item in btns) item.Background = Brushes.Green;
-                        Debug.WriteLine($"Found {word}");
 
                         //level finished
                         if (game.Level.Solutions.Count == 0)
@@ -143,10 +141,13 @@ namespace WordPuzzleWPF
                 }
             }
         }
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void buttonLeaderboard_Click(object sender, RoutedEventArgs e)
         {
-            Leaderboard leaderboard = new Leaderboard();
-            leaderboard.Show();
+            if (game.Level is not null)
+            {
+                Leaderboard leaderboard = new Leaderboard();
+                leaderboard.Show();
+            }
         }
 
         private void buttonLogout_Click(object sender, RoutedEventArgs e)
@@ -154,6 +155,12 @@ namespace WordPuzzleWPF
             this.Close();
             ((Login)Application.Current.MainWindow).textBlock.Text = "You've been logged out.";
             game.Logout();
+        }
+
+        private void textBlockUsername_Click(object sender, RoutedEventArgs e)
+        {
+            Account account = new Account();
+            account.Show();
         }
     }
 }

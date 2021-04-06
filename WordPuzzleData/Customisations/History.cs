@@ -10,5 +10,11 @@ namespace WordPuzzleData
                 User = db.Users.Where(u => u.UserId == UserId).FirstOrDefault();
             return $"{Score}   {User.Username}   {Time}   {DateTime}";
         }
+        public string ToStringUser()
+        {
+            using (var db = new WordPuzzleContext())
+                Level = db.Levels.Where(l => l.LevelId == LevelId).FirstOrDefault();
+            return $"{Level.Name}   {Score}   {Time}   {DateTime}";
+        }
     }
 }

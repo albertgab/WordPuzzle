@@ -76,3 +76,5 @@ D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\bin\Deb
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\obj\Debug\net5.0-windows\Leaderboard.g.cs
 D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\obj\Debug\net5.0-windows\Leaderboard.baml
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\obj\Debug\net5.0-windows\Account.g.cs
+D:\OneDrive - Sparta Global Limited\Projects\C#\WordPuzzle\WordPuzzleWPF\obj\Debug\net5.0-windows\Account.baml
