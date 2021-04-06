@@ -23,8 +23,6 @@ namespace WordPuzzleTest
             }
         }
 
-
-
         [TestCase("Testmail", "username", "passwo", "wrongpass")]
         [TestCase("Testmail", "asdg", "passwo", "passwo")]
         [TestCase("Testm", "username", "passwo", "passwo")]
@@ -85,25 +83,3 @@ namespace WordPuzzleTest
         }
     }
 }
-
-
-/*
-[Test]
-public void WhenACustomersDetailsAreChanged_TheDatabaseIsUpdated()
-{
-    using (var db = new NorthwindContext())
-    {
-        _customerManager.Create("MAND", "Nish Mandal", "Sparta Global", "Paris");
-
-        _customerManager.Update("MAND", "Nish Mandal", "Birmingham", null, null);
-
-        var updatedCustomer = db.Customers.Find("MAND");
-        Assert.AreEqual("Birmingham", updatedCustomer.City);
-    }
-}
-
-
-Microsoft.EntityFrameworkCore.SqlServer
-Scaffold-DbContext 'Data Source=(localdb)\MSSQLLocalDB; Initial Catalog = WordPuzzle; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False' -force
-Scaffold -DbContext 'Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=WordPuzzle;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False' -force
-    */

@@ -2,37 +2,19 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WordPuzzleBusiness;
-using WordPuzzleData;
-//using System.Windows.Forms;
-//using Application = System.Windows.Application;
 
 namespace WordPuzzleWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public partial class MainWindow : Window
     {
-        //public event EventHandler UserControlClicked;
-        //Game game = new Game();
-
-        //((Login) Application.Current.Login)
-        //((MainWindow) System.Windows.Application.Current.MainWindow).;
         public Game game = ((Login)Application.Current.MainWindow).game;
         Brush prevClr;
         MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
@@ -42,77 +24,28 @@ namespace WordPuzzleWPF
         DateTime startTime;
         TimeSpan time;
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
-
-        //public event Action<string> onUserCodeFetched;
         public MainWindow()
         {
             InitializeComponent();
-            //frameMain.Content = new Login();
             listOfLevels.ItemsSource = game.LoadLevelsList();
-            textBlockUsername.Text = game.User.Username;
-
-
-            //var b1 = new Button { Content = "b1" };
-            //b1.Click += ClickOnLetter;
-            //
-
+            textBlockUsername.Text = game.User.Username; 
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 1);
-            //Login win = new Login();
-            //win.Show();
         }
-          
-        //static void OnProcessExit(object sender, EventArgs e, System.Windows.Threading.DispatcherTimer t) => t.Stop();
+         
         void timer_Tick(object sender, EventArgs e)
         {
             game.Time = startTime == DateTime.MinValue ? new TimeSpan(0) : DateTime.Now - startTime;
             textBlockTimer.Text = "Time: " + (game.Time.TotalMinutes < 10 ? "0" : "") + (int)game.Time.TotalMinutes
                 + ":" + (game.Time.Seconds < 10 ? "0" : "") + game.Time.Seconds;
         }
-        /*public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
-        {
-            var message = game.Login(textBoxEmail.Text, passwordBox.Password);
-            if (message == "")
-            {
-                textBlock.Foreground = Brushes.Green;
-                textBlock.Text = "Successfully logged in to your WordPuzzle account!";
-                //Forms.Application.DoEvents();
-                //Thread.Sleep(3000);
-                //LoginUC loginUC = new LoginUC();
-                //frameMain.Content = loginUC;
-                //stk.Children.Add(loginUC);
-                //loginUC.textBox.Text = "sad";
-                //loginUC.UserControlClicked;
-                lvl.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                textBlock.Foreground = Brushes.Red;
-                textBlock.Text = message;
-                textBoxEmail.Text = "";
-                passwordBox.Password = "";
-            }
-            //textBlock.Text = game.User.Username + game.User.Password;
-            //var win2 = new Window1();
-            //win2.Show();
-        }*/
+ 
         private void listOfLevels_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //puzzle =  new List<Button>[x, y];
-            //StackPanel stk;
-            //var lvlId = listOfLevels.SelectedItem.ToString()[0..2];
-            //var lvlll = Int32.Parse((string)lvlId.TakeWhile((c) => Char.IsLetter(c)));
-            //int lvlId = Int32.Parse((string)listOfLevels.SelectedItem.ToString()[0..3].TakeWhile(c => Char.IsLetter(c)));
+
             var lvlIdList = listOfLevels.SelectedItem.ToString()[0..3].TakeWhile(c => Char.IsDigit(c)).ToList();
             var lvlId = "";
             foreach (var item in lvlIdList) { lvlId += item; }
-            //for(int i = 0; i < 3; i++)
-            //{
-            //    Char.IsDigitlistOfLevels.SelectedItem.ToString()[i]
-            //}
-
-
-
             if (!game.LoadLevel(Int32.Parse(lvlId))) { MessageBox.Show("Problem with loading the level!"); return; }
             stk.Clear();
             var sizeInPcl = stackLvl.ActualHeight;
@@ -131,19 +64,12 @@ namespace WordPuzzleWPF
                         Width = sizeInPcl / max_x, Height = sizeInPcl / max_y,
                         Tag = (x < 10 ? "0" : "") + x + (y < 10 ? "0":"") + y };
                     button.Click += ClickOnLetter;
-                    //puzzle[i].Add(new Button());
-                    //puzzleRow.Add(new Button() { Name = $"b{i}x{j}", Content = game.Level.Letters[i * x + j], Width = sizeInPcl / x, Height = sizeInPcl / y});
                     stk[y].Children.Add(button);
                 }
                 stackLvl.Children.Add(stk[y]);
-                //this.stk.Children.Add(puzzle[i][j]);
-                //puzzle.Add(puzzleRow);
             }
             startTime = DateTime.Now;
             timer.Start();
-            //Debug.WriteLine(stk[5].Children[4]);
-            //Debug.WriteLine();
-            // Debug.WriteLine(s);
         }
         private void ClickOnLetter(object sender, RoutedEventArgs e)
         {
@@ -168,7 +94,6 @@ namespace WordPuzzleWPF
                         {
                             btns.Add((Button)stk[tmp_y].Children[btnClkd_x]);
                             word += btns.Last().Content;
-                            //word += ((Button)stk[tmp_y].Children[btnClkd_x]).Content;
                         }
                     }
                     else if (btnClkd_y == y)
@@ -188,28 +113,14 @@ namespace WordPuzzleWPF
                         foreach (var item in btns) item.Background = Brushes.Green;
                         Debug.WriteLine($"Found {word}");
 
-
-
-
-
                         //level finished
-                        //if(game.Level.Solutions.Count == 0)
-
-
-
-
-
-                        if(true)//////////////////////////////////////////////////////////////////////////////////////////REMOVE
+                        if(game.Level.Solutions.Count == 0)
                         {
                             game.Time =  DateTime.Now - startTime;
                             timer.Stop();
-                            Debug.WriteLine($"WIN!!! Time: {(int)game.Time.TotalMinutes}:{game.Time.Seconds}:{game.Time.Milliseconds/100}");
-
-                            //var t = game.Time.Pa
-
                             game.Score += (int)((1 - game.Time.TotalMilliseconds / (stk.Count * 60000)) * 500); //time bonus
+                            MessageBox.Show($"WIN!!!\nYour time: {(int)game.Time.TotalMinutes}:{game.Time.Seconds}:{game.Time.Milliseconds / 100}\nYour Score: {game.Score}");
                             game.GameFinished(game.Time);
-                            Debug.WriteLine(game.Score);
                         }
                     }
                     //Wrong word
@@ -226,10 +137,6 @@ namespace WordPuzzleWPF
                     MessageBox.Show("You can select words only vertically or horizontally!");
                 }
             }
-
-            Debug.WriteLine($"{word}");
-
-
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

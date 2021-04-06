@@ -8,42 +8,15 @@
         Background="#bdd2b6"
         Title="MainWindow" Height="798" Width="1006">
     <Grid>
-
-        <!--<Button x:Name="button" Content="Log In" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" Height="39" Width="120" Click="buttonLogin_Clicked"/>
-        <TextBox x:Name="textBoxUsername" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,244,0,0" Height="18"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="270,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="18" Width="56" TextAlignment="Right"><Run Text="Username"/><Run Text=":" FlowDirection="RightToLeft"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="270,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="56" TextAlignment="Right"><Run Text="Password:"/></TextBlock>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,131,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="278" TextAlignment="Center"/>
-        -->
         <Grid Name="lvl" Visibility="Visible" Margin="10,10,0,0">
 
             <ListBox x:Name="listOfLevels" Background="#f8ede3" SelectionChanged="listOfLevels_SelectionChanged" Margin="0,11,751,0" Height="728" VerticalAlignment="Top" />
 
-            <StackPanel x:Name="stackLvl" Margin="265,39,0,0" RenderTransformOrigin="0.5,0.5" Width="700" Height="700" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <!--<StackPanel Width="400" Height="40" Orientation="Horizontal">
-                    <Button x:Name="button1" Content="Button" Width="40" Height="40"/>
-                    <Button x:Name="button2" Content="Button2" Width="40" Height="40"/>
-
-                </StackPanel>
-                <StackPanel Width="400" Height="40" Orientation="Horizontal"/>
-                <StackPanel Width="400" Height="40" Orientation="Horizontal"/>-->
-            </StackPanel>
+            <StackPanel x:Name="stackLvl" Margin="265,39,0,0" RenderTransformOrigin="0.5,0.5" Width="700" Height="700" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left"></StackPanel>
             <TextBlock x:Name="textBlockTimer" HorizontalAlignment="Left" Margin="331,10,0,0" Text="Time: 00:00" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
             <TextBlock x:Name="textBlockUsername" HorizontalAlignment="Left" Margin="842,13,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextAlignment="Right"/>
             <Button x:Name="buttonLogout" Content="Logout" HorizontalAlignment="Left" Margin="718,11,0,0" VerticalAlignment="Top" Width="84" Click="buttonLogout_Click"/>
             <Button x:Name="button" Content="Leaderboard" HorizontalAlignment="Left" Margin="488,11,0,0" VerticalAlignment="Top" Width="83" Click="button_Click"/>
-
-            <!--<StackPanel Name ="stk" Orientation="Vertical" Visibility="Visible">
-                <ListBox x:Name="listOfLevels" Height="375" Width="456" SelectionChanged="listOfLevels_SelectionChanged"/>
-            </StackPanel>-->
         </Grid>
-
-
-
-
-        <!--<Frame x:Name="frameMain" Content= "zzxc" Margin="-113,204,113,-204"/>-->
-        <!--<local:UserControl1 x:Name="UC" onUserCodeFetched="UC_OnUserControlClicked" />-->
-        <!--<local:UserControl1 x:Name="UC" UserControlClicked="UC_OnUserControlClicked" />-->
     </Grid>
 </Window>
