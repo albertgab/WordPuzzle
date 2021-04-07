@@ -41,19 +41,20 @@ Logout ||
 
 ## Sprint no. 2:
 **Sprint goal:** Get the code ready for presentation.
-DONE                      |LEFT TO TEST       |NOT DONE
---------------------------|-----------------  |----------
-Prepare a solution        |          |History   
-Create GitHub repository  | |Add admin
-Create database           |           |Add levels
-Setup Entity Framework    |                   |Changing details
-Registration              |                   |
-Timer                     |                   |
+DONE                            |NOT DONE
+-------------------------- |----------
+Prepare a solution                 |History   
+Create GitHub repository  |Add admin
+Create database                      |Add levels
+Setup Entity Framework                       |Changing details
+Registration                                 |
+Timer                                        |
 Leaderboard||
-Logout ||
-Playing  ||
-Displaying a level||
-Login   ||
+Logout |
+Playing  |
+Displaying a level|
+Login   |
+History |
 
 ### Sprint retrospective:
 #### What went well?
