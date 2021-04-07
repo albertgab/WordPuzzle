@@ -63,7 +63,7 @@ Logout ||
 - I should do much more test-driven development.
 - The model first approach should be used for implementing Entity Framework as it is more suitable for this kind of project.
 - I should do more research on how to design the game.
-### What would I next?
+### What will I do next?
 - Improve Front-End (better design of windows and pages, play with colours).
 - Add admin functions like adding levels, adding new admins, changing details/removing users.
 - Access to the leaderboard through the internet.
