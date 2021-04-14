@@ -1,21 +1,27 @@
-﻿using System.Linq;
+﻿using WordPuzzleData.Services;
 
 namespace WordPuzzleData
 {
     public partial class History
     {
+        private IGameService _service;
+        public History(IGameService service)
+        {
+            _service = service;
+        }
+        public History()
+        {
+            _service = new GameService();
+        }
         public override string ToString()
         {
-            using (var db = new WordPuzzleContext())
-                User = db.Users.Where(u => u.UserId == UserId).FirstOrDefault();
+            User = _service.GetUserById(LevelId);
             return $"{Score}   {User.Username}   {Time}   {DateTime}";
         }
         public string ToStringUser()
         {
-            using (var db = new WordPuzzleContext())
-                Level = db.Levels.Where(l => l.LevelId == LevelId).FirstOrDefault();
+            Level = _service.GetLevelById(LevelId);
             return $"{Level.Name}   {Score}   {Time}   {DateTime}";
         }
-
     }
 }

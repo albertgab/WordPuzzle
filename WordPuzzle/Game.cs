@@ -70,42 +70,26 @@ namespace WordPuzzleBusiness
             }
             return "";
         }
-
         public List<Level> LoadLevelsList()
         {
-            using (var db = new WordPuzzleContext())
-            {
-                var list = db.Levels.ToList();
-                return list;
-            }
+            return _service.GetLevels();
         }
         public bool LoadLevel(int levelId)
         {
-            using (var db = new WordPuzzleContext())
-            {
-                Level = db.Levels.Where(l => l.LevelId == levelId).FirstOrDefault();
-                Level.Solutions = db.Solutions.Where(s => s.LevelId == levelId).ToList();
-            }
-            return !(Level is null);
+            Level = _service.GetLevelByIdWithSolutions(levelId);
+            return Level is not null;
         }
-
         public string WordsLeft()
         {
             return Level.Solutions.Count() != 1 ? $"{Level.Solutions.Count()} words left" : "1 word left";
         }
-
         public void GameFinished(TimeSpan time)
         {
             User.Score += Score;
             time = new TimeSpan(time.Hours, time.Minutes, time.Seconds);
             History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
             Score = 0;
-            using (var db = new WordPuzzleContext())
-            {
-                db.Users.Where(u => u.UserId == User.UserId).FirstOrDefault().Score = User.Score;
-                db.Histories.Add(newRec);
-                db.SaveChanges();
-            }
+            _service.SaveGameResult(User, newRec);
         }
         public void Logout()
         {
