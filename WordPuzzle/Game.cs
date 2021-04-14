@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using WordPuzzleData;
+using WordPuzzleData.Services;
 
 namespace WordPuzzleBusiness
 {
@@ -13,60 +14,35 @@ namespace WordPuzzleBusiness
         public Level Level { get; set; }
         public int Score { get; set; } = 0;
         public TimeSpan Time { get; set; }
-
+        private IGameService _service;
+        public Game(IGameService service)
+        {
+            _service = service;
+        }
+        public Game()
+        {
+            _service = new GameService();
+        }
         public string Login(string email, string password)
         {
-            using (var db = new WordPuzzleContext())
+            var userQuery = _service.GetUserByEmail(email);
+
+            if (userQuery is null) { return $"Couldn't find an account with the e-mail: {email}"; }
+            if (userQuery.Password == password)
             {
-                var userQuery = db.Users.Where(u => u.Email == email).FirstOrDefault();
-                if (userQuery is null) { return $"Couldn't find an account with the e-mail: {email}"; }
-                if (userQuery.Password == password)
-                {
-                    User = userQuery;
-
-                    return "";
-                }
-                return "Wrong password!";
+                User = userQuery;
+                return "";
             }
+            return "Wrong password!";
         }
-
         public IEnumerable LoadUserHistory()
         {
-            using (var db = new WordPuzzleContext())
-            {
-                var list = db.Histories.Where(h => h.UserId== User.UserId).ToList()
-                    .OrderBy(h => h.DateTime).Reverse();
-                var listStr = new List<String>();
-                foreach(var item in list)
-                {
-                    listStr.Add(item.ToStringUser());
-                }
-                return listStr;
-            }
-        }
-        public List<string> UserHistory()
-        {
-            using (var db = new WordPuzzleContext())
-            {
-                var his = db.Histories.ToList();
-                var list = new List<string>();
-                foreach (var item in his)
-                {
-                    var lvlName = db.Levels.Where(l => l.LevelId == item.LevelId).FirstOrDefault().Name;
-                    list.Add($"{lvlName}  {item.Score}  {item.Time}  {item.DateTime}");
-                }
-                return list;
-            }
+            return _service.GetUserHistory(User);
         }
 
         public IEnumerable LoadLeaderboard()
         {
-            using (var db = new WordPuzzleContext())
-            {
-                var list = db.Histories.Where(h => h.LevelId == Level.LevelId).ToList()
-                    .OrderBy(h => h.Score).Reverse();
-                return list;
-            }
+                return _service.GetLeaderboard(Level);
         }
 
         public string Register(string email, string username,
@@ -74,27 +50,23 @@ namespace WordPuzzleBusiness
         {
             if (country == "") { country = "Unknown"; }
             User = new User() { Email = email, Username = username, Password = password, Country = country, UserType = "M" };
-            using (var db = new WordPuzzleContext())
+            if (password != passwordConf) { return "Passwords are not equal!"; }
+            try
             {
-                if (password != passwordConf) { return "Passwords are not equal!"; }
-                try
+                _service.AddUser(User);
+            }
+            catch (Exception ex)
+            {
+                var exM = (ex.InnerException is not null) ? ex.InnerException.Message : "";
+                if (exM.Contains("CHECK"))
                 {
-                    db.Users.Add(User);
-                    db.SaveChanges();
+                    return $"{exM[(exM.IndexOf("column '") + 8)..exM.LastIndexOf("'")]} is too short!";
                 }
-                catch (Exception ex)
+                if (exM.Contains("UNIQUE"))
                 {
-                    var exM = (ex.InnerException is not null) ? ex.InnerException.Message : "";
-                    if (exM.Contains("CHECK"))
-                    {
-                        return $"{exM[(exM.IndexOf("column '") + 8)..exM.LastIndexOf("'")]} is too short!";
-                    }
-                    if (exM.Contains("UNIQUE"))
-                    {
-                        return "This e-mail is already in use!";
-                    }
-                    return "Unknown error during registration!";
+                    return "This e-mail is already in use!";
                 }
+                return "Unknown error during registration!";
             }
             return "";
         }

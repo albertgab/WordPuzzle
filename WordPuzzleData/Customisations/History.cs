@@ -16,5 +16,6 @@ namespace WordPuzzleData
                 Level = db.Levels.Where(l => l.LevelId == LevelId).FirstOrDefault();
             return $"{Level.Name}   {Score}   {Time}   {DateTime}";
         }
+
     }
 }
