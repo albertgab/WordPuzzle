@@ -123,7 +123,9 @@ namespace WordPuzzleWPF
                             game.Time = DateTime.Now - startTime;
                             timer.Stop();
                             game.Score += (int)((1 - game.Time.TotalMilliseconds / (stk.Count * 60000)) * 500); //time bonus
-                            MessageBox.Show($"Congratulation!!!\nYour Score is: {game.Score}\nYour time is: {(int)game.Time.TotalMinutes}:{game.Time.Seconds}:{game.Time.Milliseconds / 100}");
+                            int min = game.Time.Minutes;
+                            int sec = game.Time.Seconds;
+                            MessageBox.Show($"Congratulation!!!\nYour Score is: {game.Score}\nYour time is: {(min < 10 ? "0" : "")}{min}:{(sec < 10 ? "0" : "")}{sec}");
                             game.GameFinished(game.Time);
                         }
                     }
