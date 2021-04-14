@@ -5,9 +5,7 @@ using WordPuzzleBusiness;
 
 namespace WordPuzzleWPF
 {
-    /// <summary>
-    /// Interaction logic for SignIn.xaml
-    /// </summary>
+    /// Interaction logic for Register.xaml
     public partial class Register : Window
     {
         Game game = ((Login)Application.Current.MainWindow).game;

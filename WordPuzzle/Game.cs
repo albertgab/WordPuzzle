@@ -8,6 +8,7 @@ namespace WordPuzzleBusiness
 {
     public class Game
     {
+        public static void Main() {}
         public User User { get; set; }
         public Level Level { get; set; }
         public int Score { get; set; } = 0;
@@ -22,7 +23,7 @@ namespace WordPuzzleBusiness
                 if (userQuery.Password == password)
                 {
                     User = userQuery;
-                    //_mode = 1;
+
                     return "";
                 }
                 return "Wrong password!";

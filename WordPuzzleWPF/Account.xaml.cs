@@ -15,9 +15,7 @@ using WordPuzzleBusiness;
 
 namespace WordPuzzleWPF
 {
-    /// <summary>
     /// Interaction logic for Account.xaml
-    /// </summary>
     public partial class Account : Window
     {
         Game game = ((MainWindow)Application.Current.Windows.OfType<MainWindow>().FirstOrDefault()).game;

@@ -34,11 +34,5 @@ namespace WordPuzzleTest
                 Assert.AreEqual(game.User is null, true);
             }
         }
-
-        [TearDown]
-        public void TearDown()
-        {
-            game.User = null;
-        }
     }
 }

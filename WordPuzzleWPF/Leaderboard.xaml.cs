@@ -15,9 +15,7 @@ using WordPuzzleBusiness;
 
 namespace WordPuzzleWPF
 {
-    /// <summary>
     /// Interaction logic for Leaderboard.xaml
-    /// </summary>
     public partial class Leaderboard : Window
     {
         Game game = ((MainWindow)Application.Current.Windows.OfType<MainWindow>().FirstOrDefault()).game;
