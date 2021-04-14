@@ -41,6 +41,21 @@ Logout ||
 
 ## Sprint no. 2:
 **Sprint goal:** Get the code ready for presentation.
+DONE                            |NOT DONE
+-------------------------- |----------
+Prepare a solution                 |History   
+Create GitHub repository  |Add admin
+Create database                      |Add levels
+Setup Entity Framework                       |Changing details
+Registration                                 |
+Timer                                        |
+Leaderboard||
+Logout |
+Playing  |
+Displaying a level|
+Login   |
+History |
+
 ### Sprint retrospective:
 #### What went well?
 - I implemented some new features and tests.
@@ -63,7 +78,7 @@ Logout ||
 - I should do much more test-driven development.
 - The model first approach should be used for implementing Entity Framework as it is more suitable for this kind of project.
 - I should do more research on how to design the game.
-### What would I next?
+### What will I do next?
 - Improve Front-End (better design of windows and pages, play with colours).
 - Add admin functions like adding levels, adding new admins, changing details/removing users.
 - Access to the leaderboard through the internet.
