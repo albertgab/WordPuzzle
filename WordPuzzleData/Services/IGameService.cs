@@ -17,5 +17,6 @@ namespace WordPuzzleData.Services
         public List<Level> GetLevels();
         public Level GetLevelByIdWithSolutions(int levelId);
         public void SaveGameResult(User user, History newRec);
+        public User GetFirstUser();
     }
 }

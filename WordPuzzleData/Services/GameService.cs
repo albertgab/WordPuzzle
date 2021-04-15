@@ -59,21 +59,19 @@ namespace WordPuzzleData.Services
             level.Solutions = _context.Solutions.Where(s => s.LevelId == levelId).ToList();
             return level;
         }
-
         public void SaveGameResult(User user, History newRec)
         {
             //Discard unwanted changes
-            _context.Entry(GetLevelById(newRec.LevelId)).Reload();
-            //GetLevelById(newRec.LevelId).Solutions = _context.Solutions.Where(s => s.LevelId == newRec.LevelId).ToList();
-
-            //_context = new WordPuzzleContext();
+            //_context.Entry(GetLevelById(newRec.LevelId)).Reload();
+            GetLevelById(newRec.LevelId).Solutions = _context.Solutions.Where(s => s.LevelId == newRec.LevelId).ToList();
+            
             GetUserById(user.UserId).Score = user.Score;
             _context.Histories.Add(newRec);
-            //using (var db = new WordPuzzleContext())
-            //{
-            //    db.SaveChanges();
-            //}
             _context.SaveChanges();
+        }
+        public User GetFirstUser()
+        {
+            return _context.Users.FirstOrDefault(); ;
         }
     }
 }
