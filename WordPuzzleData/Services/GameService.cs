@@ -17,7 +17,7 @@ namespace WordPuzzleData.Services
         }
         public Level GetLevelById(int levelId)
         {
-            return _context.Levels.Where(l => l.LevelId == levelId).FirstOrDefault(); ;
+            return _context.Levels.Where(l => l.LevelId == levelId).FirstOrDefault();
         }
 
         public User GetUserById(int userId)
@@ -55,16 +55,24 @@ namespace WordPuzzleData.Services
         }
         public Level GetLevelByIdWithSolutions(int levelId)
         {
-            
-            Level level = _context.Levels.Where(l => l.LevelId == levelId).FirstOrDefault();
+            Level level = GetLevelById(levelId);
             level.Solutions = _context.Solutions.Where(s => s.LevelId == levelId).ToList();
             return level;
         }
 
         public void SaveGameResult(User user, History newRec)
         {
+            //Discard unwanted changes
+            _context.Entry(GetLevelById(newRec.LevelId)).Reload();
+            //GetLevelById(newRec.LevelId).Solutions = _context.Solutions.Where(s => s.LevelId == newRec.LevelId).ToList();
+
+            //_context = new WordPuzzleContext();
             GetUserById(user.UserId).Score = user.Score;
             _context.Histories.Add(newRec);
+            //using (var db = new WordPuzzleContext())
+            //{
+            //    db.SaveChanges();
+            //}
             _context.SaveChanges();
         }
     }

@@ -9,7 +9,7 @@ namespace WordPuzzleBusiness
 {
     public class Game
     {
-        public static void Main() {}
+        public static void Main() { }
         public User User { get; set; }
         public Level Level { get; set; }
         public int Score { get; set; } = 0;

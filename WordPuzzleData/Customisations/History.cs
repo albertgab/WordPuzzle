@@ -1,4 +1,5 @@
-﻿using WordPuzzleData.Services;
+﻿using System.Linq;
+using WordPuzzleData.Services;
 
 namespace WordPuzzleData
 {
@@ -15,7 +16,7 @@ namespace WordPuzzleData
         }
         public override string ToString()
         {
-            User = _service.GetUserById(LevelId);
+            User = _service.GetUserById(UserId);
             return $"{Score}   {User.Username}   {Time}   {DateTime}";
         }
         public string ToStringUser()
