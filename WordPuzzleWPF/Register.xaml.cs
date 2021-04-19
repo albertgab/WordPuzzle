@@ -8,7 +8,7 @@ namespace WordPuzzleWPF
     /// Interaction logic for Register.xaml
     public partial class Register : Window
     {
-        Game game = ((Login)Application.Current.MainWindow).game;
+        Game _game = ((Login)Application.Current.MainWindow).Game;
         public Register()
         {
             InitializeComponent();
@@ -16,16 +16,16 @@ namespace WordPuzzleWPF
 
         private void buttonRegister(object sender, RoutedEventArgs e)
         {
-            var message = game.Register(textBoxEmail.Text, textBoxUsername.Text,
+            var message = _game.Register(textBoxEmail.Text, textBoxUsername.Text,
                 passwordBox.Password, passwordBoxConf.Password, textBoxCountry.Text);
             if (message == "")
             {
                 textBlock.Foreground = Brushes.Green;
                 textBlock.Text = "Successfully registerd new account!";
-                MainWindow main = new MainWindow();
+                var main = new MainWindow();
                 main.Show();
                 this.Close();
-                Debug.WriteLine(game.User.UserId.ToString() + game.User.Email + game.User.Username + game.User.Password + game.User.Country);
+                Debug.WriteLine(_game.User.UserId.ToString() + _game.User.Email + _game.User.Username + _game.User.Password + _game.User.Country);
             }
             else
             {
@@ -40,7 +40,7 @@ namespace WordPuzzleWPF
             try { Application.Current.MainWindow.Show(); }
             catch
             {
-                Login loginWin = new Login();
+                var loginWin = new Login();
                 loginWin.Show();
             }
         }

@@ -7,19 +7,19 @@ namespace WordPuzzleWPF
     /// Interaction logic for Login.xaml
     public partial class Login : Window
     {
-        public Game game = new Game();
+        public Game Game = new Game();
         public Login()
         {
             InitializeComponent();
         }
         public void buttonLogin_Clicked(object sender, RoutedEventArgs e)
         {
-            var message = game.Login(textBoxEmail.Text, passwordBox.Password);
+            var message = Game.Login(textBoxEmail.Text, passwordBox.Password);
             if (message == "")
             {
                 textBlock.Foreground = Brushes.Green;
                 textBlock.Text = "Successfully logged in to your WordPuzzle account!";
-                MainWindow main = new MainWindow();
+                var main = new MainWindow();
                 main.Show();
                 textBoxEmail.Text = "";
                 passwordBox.Password = "";
@@ -33,7 +33,7 @@ namespace WordPuzzleWPF
 
         private void buttonSignIn_Clicked(object sender, RoutedEventArgs e)
         {
-            Register register = new Register();
+            var register = new Register();
             register.Show();
         }
     }

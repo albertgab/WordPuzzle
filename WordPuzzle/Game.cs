@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using WordPuzzleData;
 using WordPuzzleData.Services;
 
@@ -14,7 +13,7 @@ namespace WordPuzzleBusiness
         public Level Level { get; set; }
         public int Score { get; set; } = 0;
         public TimeSpan Time { get; set; }
-        private IGameService _service;
+        private readonly IGameService _service;
         public Game(IGameService service)
         {
             _service = service;
@@ -42,7 +41,7 @@ namespace WordPuzzleBusiness
 
         public IEnumerable LoadLeaderboard()
         {
-                return _service.GetLeaderboard(Level);
+            return _service.GetLeaderboard(Level);
         }
 
         public string Register(string email, string username,
@@ -62,11 +61,7 @@ namespace WordPuzzleBusiness
                 {
                     return $"{exM[(exM.IndexOf("column '") + 8)..exM.LastIndexOf("'")]} is too short!";
                 }
-                if (exM.Contains("UNIQUE"))
-                {
-                    return "This e-mail is already in use!";
-                }
-                return "Unknown error during registration!";
+                return exM.Contains("UNIQUE") ? "This e-mail is already in use!" : "Unknown error during registration!";
             }
             return "";
         }
@@ -81,13 +76,13 @@ namespace WordPuzzleBusiness
         }
         public string WordsLeft()
         {
-            return Level.Solutions.Count() != 1 ? $"{Level.Solutions.Count()} words left" : "1 word left";
+            return Level.Solutions.Count != 1 ? $"{Level.Solutions.Count} words left" : "1 word left";
         }
         public void GameFinished(TimeSpan time)
         {
             User.Score += Score;
             time = new TimeSpan(time.Hours, time.Minutes, time.Seconds);
-            History newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
+            var newRec = new History() { UserId = User.UserId, LevelId = Level.LevelId, Score = Score, Time = time, DateTime = DateTime.Now };
             Score = 0;
             _service.SaveGameResult(User, newRec);
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace WordPuzzleData.Services
@@ -17,16 +16,16 @@ namespace WordPuzzleData.Services
         }
         public Level GetLevelById(int levelId)
         {
-            return _context.Levels.Where(l => l.LevelId == levelId).FirstOrDefault();
+            return _context.Levels.FirstOrDefault(l => l.LevelId == levelId);
         }
 
         public User GetUserById(int userId)
         {
-            return _context.Users.Where(u => u.UserId == userId).FirstOrDefault();
+            return _context.Users.FirstOrDefault(u => u.UserId == userId);
         }
         public User GetUserByEmail(string email)
         {
-            return _context.Users.Where(u => u.Email == email).FirstOrDefault();
+            return _context.Users.FirstOrDefault(u => u.Email == email);
         }
         
         public List<string> GetUserHistory(User user)
@@ -55,7 +54,7 @@ namespace WordPuzzleData.Services
         }
         public Level GetLevelByIdWithSolutions(int levelId)
         {
-            Level level = GetLevelById(levelId);
+            var level = GetLevelById(levelId);
             level.Solutions = _context.Solutions.Where(s => s.LevelId == levelId).ToList();
             return level;
         }
@@ -71,7 +70,7 @@ namespace WordPuzzleData.Services
         }
         public User GetFirstUser()
         {
-            return _context.Users.FirstOrDefault(); ;
+            return _context.Users.FirstOrDefault();
         }
     }
 }

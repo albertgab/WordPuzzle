@@ -7,11 +7,11 @@ namespace WordPuzzleTest
 {
     class LogoutTests
     {
-        Game game;
+        Game _game;
         [SetUp]
         public void Setup()
         {
-            game = new Game();
+            _game = new Game();
         }
         [Test]
         public void LogoutTest()
@@ -19,10 +19,10 @@ namespace WordPuzzleTest
             using (var db = new WordPuzzleContext())
             {
                 var user = db.Users.FirstOrDefault();
-                game.Login(user.Email, user.Password);
-                Assert.AreEqual(game.User is null, false);
-                game.Logout();
-                Assert.AreEqual(game.User is null, true);
+                _game.Login(user.Email, user.Password);
+                Assert.AreEqual(_game.User is null, false);
+                _game.Logout();
+                Assert.AreEqual(_game.User is null, true);
             }
         }
     }

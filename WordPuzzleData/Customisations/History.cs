@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using WordPuzzleData.Services;
+﻿using WordPuzzleData.Services;
 
 namespace WordPuzzleData
 {
     public partial class History
     {
-        private IGameService _service;
+        private readonly IGameService _service;
         public History(IGameService service)
         {
             _service = service;

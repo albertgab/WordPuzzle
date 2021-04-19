@@ -7,11 +7,11 @@ namespace WordPuzzleTest
 {
     public class Tests
     {
-        Game game;
+        Game _game;
         [SetUp]
         public void Setup()
         {
-            game = new Game();
+            _game = new Game();
             using (var db = new WordPuzzleContext())
             {
                 var userQuery = db.Users.Where((u) => u.Email == "Testmail" || u.Email == "Testma" || u.Email == "Testm").ToList();
@@ -33,7 +33,7 @@ namespace WordPuzzleTest
             using (var db = new WordPuzzleContext())
             {
                 var numberOfUsersBefore = db.Users.Count();
-                game.Register(email, username, password, passwordConf, "");
+                _game.Register(email, username, password, passwordConf, "");
                 var numberOfUsersAfter = db.Users.Count();
                 Assert.AreEqual(numberOfUsersBefore, numberOfUsersAfter);
             }
@@ -45,8 +45,8 @@ namespace WordPuzzleTest
             using (var db = new WordPuzzleContext())
             {
                 var numberOfUsersBefore = db.Users.Count();
-                game.Register("Testmail", "username", "passwo", "passwo", "");
-                game.Register("Testmail", "username", "passwo", "passwo", "");
+                _game.Register("Testmail", "username", "passwo", "passwo", "");
+                _game.Register("Testmail", "username", "passwo", "passwo", "");
                 var numberOfUsersAfter = db.Users.Count();
                 Assert.AreEqual(numberOfUsersBefore + 1, numberOfUsersAfter);
             }
@@ -62,7 +62,7 @@ namespace WordPuzzleTest
             using (var db = new WordPuzzleContext())
             {
                 var numberOfUsersBefore = db.Users.Count();
-                game.Register(email, username, password, passwordConf, "");
+                _game.Register(email, username, password, passwordConf, "");
                 var numberOfUsersAfter = db.Users.Count();
                 Assert.AreEqual(numberOfUsersBefore + 1, numberOfUsersAfter);
             }
