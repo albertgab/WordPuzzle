@@ -1,10 +1,10 @@
 ## User Guide
 In case of running the program you need to:
-1. Install NET 5.0 if you don't have already installed.
+1. Install NET 5.0 if you haven't already.
 2. Create a database by running the Create_Database1.sql file.
 3. Populate database by running Populate_Database.sql file.<br />
 Just to run the app:
-4. Run WordPuzzleWPF\bin\Release\net5.0-windows\WordPuzzleWPF.exe.
+4. Run WordPuzzleWPF\bin\Release\net5.0-windows\WordPuzzleWPF.exe.<br />
 To view the code:
 4. Open WordPuzzle.sln in Visual Studio.
 5. In WordPuzzleData\WordPuzzleContext.cs put our connection string in to optionsBuilder.UseSqlServer('connetction string').
